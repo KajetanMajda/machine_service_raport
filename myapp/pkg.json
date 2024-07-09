@@ -1,6 +1,0 @@
-{
-    "assets": [
-      "node_modules/sqlite3/lib/binding/**/*"
-    ]
-  }
-  
