@@ -6,11 +6,7 @@
   "scripts": {
     "start": "node app.js"
   },
-  "keywords": [],
-  "author": "KajetanMajda",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2",
-    "sqlite3": "^5.1.7"
+    "express": "^4.17.1"
   }
 }
