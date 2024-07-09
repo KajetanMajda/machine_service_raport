@@ -1,0 +1,7 @@
+{
+    "assets": [
+      "public/**/*",
+      "data.json"
+    ]
+  }
+  

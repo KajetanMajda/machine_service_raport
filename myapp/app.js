@@ -4,9 +4,13 @@ const path = require('path');
 const app = express();
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
 
-const dataFilePath = path.join(__dirname, 'data.json');
+const isPkg = typeof process.pkg !== 'undefined';
+const basePath = isPkg ? path.dirname(process.execPath) : __dirname;
+
+app.use(express.static(path.join(basePath, 'public')));
+
+const dataFilePath = path.join(basePath, 'data.json');
 
 // Inicjalizacja pliku JSON jako bazy danych
 if (!fs.existsSync(dataFilePath)) {
@@ -41,7 +45,7 @@ app.post('/api/users', (req, res) => {
 
 // Serwowanie strony HTML
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(basePath, 'public', 'index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
