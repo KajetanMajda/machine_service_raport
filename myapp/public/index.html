@@ -9,18 +9,60 @@
   <h1>Users</h1>
   <ul id="user-list"></ul>
 
+  <h2>Add User</h2>
+  <form id="user-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="surname">Surname:</label>
+    <input type="text" id="surname" name="surname" required>
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+
   <script>
-    fetch('/api/users')
+    // Function to fetch and display users
+    function fetchUsers() {
+      fetch('/api/users')
+        .then(response => response.json())
+        .then(data => {
+          const userList = document.getElementById('user-list');
+          userList.innerHTML = '';
+          data.users.forEach(user => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${user.name} ${user.surname}`;
+            userList.appendChild(listItem);
+          });
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Fetch and display users on page load
+    fetchUsers();
+
+    // Handle form submission
+    document.getElementById('user-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const surname = document.getElementById('surname').value;
+
+      fetch('/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, surname })
+      })
       .then(response => response.json())
-      .then(data => {
-        const userList = document.getElementById('user-list');
-        data.users.forEach(user => {
-          const listItem = document.createElement('li');
-          listItem.textContent = `${user.name} ${user.surname}`;
-          userList.appendChild(listItem);
-        });
+      .then(() => {
+        // Clear the form
+        document.getElementById('name').value = '';
+        document.getElementById('surname').value = '';
+        // Fetch and display updated user list
+        fetchUsers();
       })
       .catch(error => console.error('Error:', error));
+    });
   </script>
 </body>
 </html>
