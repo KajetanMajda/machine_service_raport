@@ -1,4 +1,4 @@
-function navUnderScore(reportType) {
+function navUnderScore(event) {
     var items = document.querySelectorAll('.navbarItem');
     items.forEach(function (item) {
         item.classList.remove('active');

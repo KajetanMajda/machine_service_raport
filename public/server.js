@@ -68,13 +68,47 @@ function filterReports(category) {
   fetchReports(category);
 }
 
+function getActiveCategory() {
+  const activeElement = document.querySelector('.navbarItem.active');
+  return activeElement ? activeElement.textContent : null;
+}
+
 document.getElementById('report-form').addEventListener('submit', function (event) {
   event.preventDefault();
+
+  const activeCategory = getActiveCategory();
+  document.getElementById('category').value = activeCategory;
+
   const formData = new FormData(this);
+
+  for (let [key, value] of formData.entries()) {
+    console.log(`${key}: ${value}`);
+  }
+
+  const data = {
+    description: formData.get('description'),
+    start_date: formData.get('start_date'),
+    end_date: formData.get('end_date'),
+    comments: formData.get('comments'),
+    category: formData.get('category'),
+    pictures: formData.getAll('pictures')
+  };
+
+  console.log(data);
+
+  const submitData = new FormData();
+  submitData.append('description', data.description);
+  submitData.append('start_date', data.start_date);
+  submitData.append('end_date', data.end_date);
+  submitData.append('comments', data.comments);
+  submitData.append('category', data.category);
+  data.pictures.forEach((picture, index) => {
+    submitData.append('pictures', picture);
+  });
 
   fetch('/api/reports', {
     method: 'POST',
-    body: formData
+    body: submitData
   })
     .then(response => response.json())
     .then(() => {
@@ -83,5 +117,6 @@ document.getElementById('report-form').addEventListener('submit', function (even
     })
     .catch(error => console.error('Error:', error));
 });
+
 
 fetchReports();

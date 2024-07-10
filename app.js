@@ -54,9 +54,9 @@ app.get('/api/reports', (req, res) => {
   res.json({ maintenance: reports });
 });
 
-// Endpoint do dodawania nowego raportu
-app.post('/api/reports', upload.single('pictures'), (req, res) => {
-  const { category, description, start_date, end_date, comments } = req.body;
+app.post('/api/reports', upload.array('pictures', 10), (req, res) => {
+  const { description, start_date, end_date, comments } = req.body;
+  const category = req.body.category || 'Unknown';
   const data = readData();
   const newReport = {
     id: data.maintenance.length + 1,
@@ -65,14 +65,13 @@ app.post('/api/reports', upload.single('pictures'), (req, res) => {
     start_date,
     end_date,
     comments,
-    pictures: req.file ? `/uploads/${req.file.filename}` : null
+    pictures: req.files ? req.files.map(file => `${file.filename}`) : []
   };
   data.maintenance.push(newReport);
   writeData(data);
   res.json({ id: newReport.id });
 });
 
-// Serwowanie strony HTML
 app.get('/', (req, res) => {
   res.sendFile(path.join(basePath, 'public', 'index.html'));
 });

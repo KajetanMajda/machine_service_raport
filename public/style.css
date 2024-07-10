@@ -12,13 +12,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100%;
   box-sizing: border-box;
 }
 
 .container {
   width: 100%;
-  border: 30px solid var( --BG-main-colour); /* Gruba ramka dookoła całej strony */
+  min-height: 95vh;
+  border: 30px solid var( --BG-main-colour);
 }
 
 nav {
@@ -116,6 +117,8 @@ nav {
   box-shadow: 5px 2px 2px gray; ;
   background-color: var(--BG-main-colour);
   border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .report-picture-container {
@@ -130,4 +133,40 @@ nav {
   height: 150px;
   border-radius: 5px;
   object-fit: cover;
+}
+#report-form{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap:10px;
+}
+
+#description{
+  width: 30%;
+}
+.startDate{
+  width: 17%;
+}
+.endDate{
+  align-items: center;
+  width: 15%;
+}
+#comments{
+  width: 30%;
+}
+#pictures{
+  width: 25%;
+}
+
+.addButton{
+  text-align: center;
+  width: 11%;
+  height: 26px;
+  border: none;
+  box-shadow: 5px 2px 2px gray; ;
+  background-color: var(--BG-main-colour);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
 }

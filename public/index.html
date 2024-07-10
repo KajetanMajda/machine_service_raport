@@ -42,13 +42,16 @@
             </div>
 
             <div class="add-container">
-                <form id="report-form" enctype="multipart/form-data">
-                    <input type="text" id="description" name="description" placeholder="Opis problemu">
-                    <input type="date" id="start_date" name="start_date" placeholder="Data wystąpienia">
-                    <input type="date" id="end_date" name="end_date" placeholder="Data naprawy">
-                    <input type="text" id="comments" name="comments" placeholder="Uwagi">
+                <form id="report-form" enctype="multipart/form-data">   
+                    <textarea type="text" id="description" name="description" placeholder="Opis problemu"></textarea>
+                    <label for="start_date" class="startDate">Data wystąpienia</label>
+                    <input type="date" id="start_date" class="startDate" name="start_date">
+                    <label for="end_date" class="endDate">Data naprawy</label>
+                    <input type="date" id="end_date" name="end_date" class="endDate"placeholder="Data naprawy">
+                    <textarea type="text" id="comments" name="comments" placeholder="Uwagi"></textarea>
                     <input type="file" id="pictures" name="pictures" placeholder="Załącz zdjęcia" multiple>
-                    <button type="submit">Dodaj</button>
+                    <button type="submit" class="addButton">Dodaj</button>
+                    <input type="hidden" id="category" name="category">
                 </form>
             </div>
             <div class="report-line">
