@@ -1,0 +1,168 @@
+{
+  "maintenance": [
+    {
+      "id": 1,
+      "category": "Skoda",
+      "description": "Wyciek oleju",
+      "start_date": "2023-08-24",
+      "end_date": "",
+      "comments": "",
+      "pictures": [
+        "image.png",
+        "image.png",
+        "image2.jpg",
+        "image.png"
+      ]
+    },
+    {
+      "id": 2,
+      "category": "Skoda",
+      "description": "BRAK OBROTU STOŁU - PROBLEMY Z OLEJEM",
+      "start_date": "2023-10-06",
+      "end_date": "",
+      "comments": "",
+      "pictures": [
+        "image.png"
+      ]
+    },
+    {
+      "id": 3,
+      "category": "Skoda",
+      "description": "AWARIA MOCOWANIA NARZĘDZIA",
+      "start_date": "2023-10-06",
+      "end_date": "",
+      "comments": "",
+      "pictures": [
+        "image.png"
+      ]
+    },
+    {
+      "id": 4,
+      "category": "Skoda",
+      "description": "AWARIA SAMROWANIA STOŁU",
+      "start_date": "2023-10-06",
+      "end_date": "",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 5,
+      "category": "SC33",
+      "description": "Poziomowanie słupy",
+      "start_date": "",
+      "end_date": "",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 6,
+      "category": "SC33",
+      "description": "Belka do zrobienia",
+      "start_date": "",
+      "end_date": "",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 7,
+      "category": "SC33",
+      "description": "Uszczelnienia do wymiany",
+      "start_date": "",
+      "end_date": "",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 8,
+      "category": "SC33",
+      "description": "Problemy z zapadkami 24.10.23 - diagnoza Jarka Makowskiego do wymiany sprzęgło na belce. ",
+      "start_date": "2023-10-18",
+      "end_date": "",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 9,
+      "category": "SC33",
+      "description": "Do wymiany stycznik od reglowania belek ( zamówiony 01.12.2023 - dostawa)",
+      "start_date": "2023-11-22",
+      "end_date": "",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 10,
+      "category": "SC33",
+      "description": "Pozycjonowanie belki ( Jarek Makowski)",
+      "start_date": "",
+      "end_date": "",
+      "comments": "20 ORAZ 21 TYDZIEŃ JAREK ZAJĘTY",
+      "pictures": []
+    },
+    {
+      "id": 11,
+      "category": "SC33",
+      "description": "Kołkowanie supportu ( po pkt. 8)",
+      "start_date": "",
+      "end_date": "",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 12,
+      "category": "SC33",
+      "description": "Błąd NCK - diagnoza Jarka Makowskiego do wymiany wentylator w szafie ( w trakcie obróbki na gotowo staje maszyna)",
+      "start_date": "2023-10-24",
+      "end_date": "2023-10-25",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 13,
+      "category": "SC33",
+      "description": "Liniał do czyszczenia osi X",
+      "start_date": "2024-01-11",
+      "end_date": "",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 14,
+      "category": "SC33",
+      "description": "Kontrola geometri i regulacja",
+      "start_date": "",
+      "end_date": "",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 15,
+      "category": "Schiees",
+      "description": "Wyciek ze stołu",
+      "start_date": "2023-08-24",
+      "end_date": "",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 16,
+      "category": "Schiees",
+      "description": "Sprawdzenie doublina + wymiana",
+      "start_date": "2024-01-11",
+      "end_date": "2024-03-19",
+      "comments": "15.02.2024 - zamówiono złe łożyska - 16.02.2024 pomiary odpowiedniego łożyska 19.02.2024 - DOSTARCZONO ODPOWIEDNIE ŁOŻYSKA - BRAK ODPOWIEDZI ZE STRONY GRZEGORZA. 08.03.2024 - zakupiono nowe Oringi - czekamy na dostawę",
+      "pictures": []
+    },
+    {
+      "id": 17,
+      "category": "Schiees",
+      "description": "Smarowanie przekładni ",
+      "start_date": "",
+      "end_date": "",
+      "comments": "",
+      "pictures": [
+        "1720620869441-images.png"
+      ]
+    }
+  ]
+}

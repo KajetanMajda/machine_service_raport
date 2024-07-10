@@ -1,0 +1,172 @@
+:root {
+  --BG-main-colour: #FFD700;
+  --BG-secound-colour: #FFFFFF;
+  --BG-third-colour: #333;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  min-height: 95vh;
+  border: 30px solid var( --BG-main-colour);
+}
+
+nav {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  margin-bottom:20px;
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbarItem {
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.navbarItem.active {
+  text-decoration: underline;
+  color: var(--BG-main-colour);
+}
+
+
+
+/*  */
+.report-display {
+  width: 90%;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  background-color: var(--BG-secound-colour);
+}
+
+.report-line hr {
+  border: 1px solid var(--BG-main-colour);
+}
+
+.report-line .last-line {
+  border: 1px solid var(--BG-main-colour);
+  width: 80%;
+}
+
+.report-header {
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  width: 100%;
+}
+
+.report-description-header{
+  width: 38%;
+  text-align: center;
+}
+
+.report-date-end-header, .report-date-start-header {
+  width: 14%;
+  text-align: center;
+}
+
+.report-comments-header {
+  width: 38%;
+  text-align: center;
+}
+
+
+.report-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.report-description {
+  text-align: center;
+  width: 36%;
+}
+
+.report-date-start, .report-date-end {
+  text-align: center;
+  width: 13.5%;
+}
+
+.report-comments {
+  text-align: center;
+  width: 30%;
+}
+
+.report-edit-button{
+  text-align: center;
+  width: 7%;
+  height: 26px;
+  border: none;
+  box-shadow: 5px 2px 2px gray; ;
+  background-color: var(--BG-main-colour);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.report-picture-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 30px;
+}
+
+.report-image {
+  width: 250px;
+  height: 150px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+#report-form{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap:10px;
+}
+
+#description{
+  width: 30%;
+}
+.startDate{
+  width: 17%;
+}
+.endDate{
+  align-items: center;
+  width: 15%;
+}
+#comments{
+  width: 30%;
+}
+#pictures{
+  width: 25%;
+}
+
+.addButton{
+  text-align: center;
+  width: 11%;
+  height: 26px;
+  border: none;
+  box-shadow: 5px 2px 2px gray; ;
+  background-color: var(--BG-main-colour);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}

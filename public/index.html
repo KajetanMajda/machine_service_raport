@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="navbarContainer">
+                <p class="navbarItem" onclick="filterReports('SC33'); navUnderScore(event)">SC33</p>
+                <p class="navbarItem" onclick="filterReports('SC53'); navUnderScore(event)">SC53</p>
+                <p class="navbarItem" onclick="filterReports('Schiees'); navUnderScore(event)">Schiees</p>
+                <p class="navbarItem" onclick="filterReports('Skoda'); navUnderScore(event)">Skoda</p>
+                <p class="navbarItem" onclick="filterReports('Stanko'); navUnderScore(event)">Stanko</p>
+                <p class="navbarItem" onclick="filterReports('Hankook'); navUnderScore(event)">Hankook</p>
+                <p class="navbarItem" onclick="filterReports('Hass/Harnaś'); navUnderScore(event)">Hass/Harnaś</p>
+                <p class="navbarItem" onclick="filterReports('Suwnica'); navUnderScore(event)">Suwnica</p>
+                <p class="navbarItem active" onclick="navUnderScore(event)">Wszytsko</p>
+            </div>
+        </nav>
+        <div class="report-display">
+            <div class="report-line">
+                <hr>
+            </div>
+            <div class="report-header">
+                <p class="report-description-header">Opis problemu</p>
+                <p class="report-date-start-header">Data wystąpienia</p>
+                <p class="report-date-end-header">Data naprawy</p>
+                <p class="report-comments-header">Uwagi</p>
+            </div>
+            <div class="report-line">
+                <hr>
+            </div>
+            <div id="report-list">
+                <div class="report-item"></div>
+                <div class="report-picture"></div>
+                <div class="report-line">
+                    <hr class="last-line">
+                </div>
+            </div>
+
+            <div class="add-container">
+                <form id="report-form" enctype="multipart/form-data">   
+                    <textarea type="text" id="description" name="description" placeholder="Opis problemu"></textarea>
+                    <label for="start_date" class="startDate">Data wystąpienia</label>
+                    <input type="date" id="start_date" class="startDate" name="start_date">
+                    <label for="end_date" class="endDate">Data naprawy</label>
+                    <input type="date" id="end_date" name="end_date" class="endDate"placeholder="Data naprawy">
+                    <textarea type="text" id="comments" name="comments" placeholder="Uwagi"></textarea>
+                    <input type="file" id="pictures" name="pictures" placeholder="Załącz zdjęcia" multiple>
+                    <button type="submit" class="addButton">Dodaj</button>
+                    <input type="hidden" id="category" name="category">
+                </form>
+            </div>
+            <div class="report-line">
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <script src="server.js"></script>
+    <script src="nav.js"></script>
+</body>
+</html>
