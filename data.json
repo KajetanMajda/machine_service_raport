@@ -163,6 +163,15 @@
       "pictures": [
         "1720620869441-images.png"
       ]
+    },
+    {
+      "id": 18,
+      "category": "Schiees",
+      "description": "Sprawdzenie chłodziarki",
+      "start_date": "",
+      "end_date": "",
+      "comments": "",
+      "pictures": []
     }
   ]
 }
