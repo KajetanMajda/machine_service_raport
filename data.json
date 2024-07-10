@@ -1,0 +1,40 @@
+{
+  "maintenance": [
+    {
+      "id": 1,
+      "category": "Skoda",
+      "description": "Wyciek oleju",
+      "start_date": "24-08-2023",
+      "end_date": "",
+      "comments": "","pictures": ["image.png","image.png", "image2.jpg","image.png"]
+      
+    },
+    {
+      "id": 2,
+      "category": "Skoda",
+      "description": "BRAK OBROTU STOŁU - PROBLEMY Z OLEJEM",
+      "start_date": "06-10-2023",
+      "end_date": "",
+      "comments": "",
+      "pictures": ["image.png"]
+    },
+    {
+      "id": 3,
+      "category": "Skoda",
+      "description": "AWARIA MOCOWANIA NARZĘDZIA",
+      "start_date": "06-10-2023",
+      "end_date": "",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 4,
+      "category": "Skoda",
+      "description": "AWARIA SAMROWANIA STOŁU",
+      "start_date": "06-10-2023",
+      "end_date": "",
+      "comments": "",
+      "pictures": []
+    }
+  ]
+}
