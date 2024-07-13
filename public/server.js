@@ -29,6 +29,11 @@ function fetchReports(category = null) {
         reportComments.className = 'report-comments';
         reportComments.textContent = report.comments;
 
+        const reportId = document.createElement('p');
+        reportId.className = 'report-id';
+        reportId.textContent = report.id;
+        reportId.style.display = 'none';
+
         const reportEditButton = document.createElement('button');
         reportEditButton.className = 'report-edit-button';
         reportEditButton.textContent = "Edytuj";
@@ -38,6 +43,7 @@ function fetchReports(category = null) {
         reportItem.appendChild(reportEndDate);
         reportItem.appendChild(reportComments);
         reportItem.appendChild(reportEditButton);
+        reportItem.appendChild(reportId);
 
         const reportPictures = document.createElement('div');
         reportPictures.className = 'report-picture-container';
