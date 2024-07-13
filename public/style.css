@@ -44,9 +44,6 @@ nav {
   color: var(--BG-main-colour);
 }
 
-
-
-/*  */
 .report-display {
   width: 90%;
   border-radius: 5px;
@@ -61,7 +58,7 @@ nav {
 
 .report-line .last-line {
   border: 1px solid var(--BG-main-colour);
-  width: 80%;
+  width: 100%;
 }
 
 .report-header {
@@ -169,4 +166,23 @@ nav {
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
+}
+
+.button-edit-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 11%;
+}
+
+.confirmButton, .backButton{
+  border: none;
+  box-shadow: 5px 2px 2px gray; ;
+  background-color: var(--BG-main-colour);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom:5px;
+  width: 100%;
 }

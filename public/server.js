@@ -38,6 +38,10 @@ function fetchReports(category = null) {
         reportEditButton.className = 'report-edit-button';
         reportEditButton.textContent = "Edytuj";
 
+        reportEditButton.addEventListener('click', () => {
+          editReport(reportItem, report);
+        });
+
         reportItem.appendChild(reportDescription);
         reportItem.appendChild(reportStartDate);
         reportItem.appendChild(reportEndDate);
@@ -51,7 +55,7 @@ function fetchReports(category = null) {
         report.pictures.forEach(path => {
           const img = document.createElement('img');
           img.className = 'report-image';
-          img.src = `/uploads/${path}`;
+          img.src = path.startsWith('http') ? path : `/uploads/${path}`;
           img.alt = 'report picture';
           reportPictures.appendChild(img);
         });
@@ -70,13 +74,136 @@ function fetchReports(category = null) {
     .catch(error => console.error('Error fetching data:', error));
 }
 
+function editReport(reportItem, report) {
+  reportItem.innerHTML = '';
+
+  const idInput = document.createElement('input');
+  idInput.type = 'hidden';
+  idInput.id = 'report-id';
+  idInput.value = report.id;
+
+  const descriptionInput = document.createElement('textarea');
+  descriptionInput.id = 'description';
+  descriptionInput.name = 'description';
+  descriptionInput.placeholder = 'Opis problemu';
+  descriptionInput.value = report.description;
+
+  const startDateLabel = document.createElement('label');
+  startDateLabel.htmlFor = 'start_date';
+  startDateLabel.className = 'startDate';
+  startDateLabel.textContent = 'Data wystąpienia';
+
+  const startDateInput = document.createElement('input');
+  startDateInput.id = 'start_date';
+  startDateInput.className = 'startDate';
+  startDateInput.type = 'date';
+  startDateInput.name = 'start_date';
+  startDateInput.value = report.start_date;
+
+  const endDateLabel = document.createElement('label');
+  endDateLabel.htmlFor = 'end_date';
+  endDateLabel.className = 'endDate';
+  endDateLabel.textContent = 'Data naprawy';
+
+  const endDateInput = document.createElement('input');
+  endDateInput.id = 'end_date';
+  endDateInput.className = 'endDate';
+  endDateInput.type = 'date';
+  endDateInput.name = 'end_date';
+  endDateInput.placeholder = 'Data naprawy';
+  endDateInput.value = report.end_date;
+
+  const commentsInput = document.createElement('textarea');
+  commentsInput.id = 'comments';
+  commentsInput.name = 'comments';
+  commentsInput.placeholder = 'Uwagi';
+  commentsInput.value = report.comments;
+
+  const picturesInput = document.createElement('input');
+  picturesInput.id = 'pictures';
+  picturesInput.name = 'pictures';
+  picturesInput.type = 'file';
+  picturesInput.placeholder = 'Załącz zdjęcia';
+  picturesInput.multiple = true;
+
+  const buttonEditContainer = document.createElement('div');
+  buttonEditContainer.className = 'button-edit-container';
+
+  const saveButton = document.createElement('button');
+  saveButton.className = 'confirmButton';
+  saveButton.textContent = 'Zatwierdz';
+  saveButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    saveReport(idInput.value, descriptionInput.value, startDateInput.value, endDateInput.value, commentsInput.value);
+  });
+
+  const cancelButton = document.createElement('button');
+  cancelButton.className = 'backButton';
+  cancelButton.textContent = 'Cofnij';
+  cancelButton.addEventListener('click', () => {
+    fetchReports();
+  });
+
+  buttonEditContainer.appendChild(saveButton);
+  buttonEditContainer.appendChild(cancelButton);
+
+  reportItem.appendChild(idInput);
+  reportItem.appendChild(descriptionInput);
+  reportItem.appendChild(startDateLabel);
+  reportItem.appendChild(startDateInput);
+  reportItem.appendChild(endDateLabel);
+  reportItem.appendChild(endDateInput);
+  reportItem.appendChild(commentsInput);
+  reportItem.appendChild(picturesInput);
+  reportItem.appendChild(buttonEditContainer);
+}
+
+function saveReport(id, description, startDate, endDate, comments) {
+  const data = {
+    id: id,
+    description: description,
+    start_date: startDate,
+    end_date: endDate,
+    comments: comments
+  };
+
+  fetch(`/api/reports/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(() => {
+      fetchReports();
+    })
+    .catch(error => console.error('Error saving data:', error));
+}
+
 function filterReports(category) {
   fetchReports(category);
+  toggleForm(category !== null);
 }
 
 function getActiveCategory() {
   const activeElement = document.querySelector('.navbarItem.active');
   return activeElement ? activeElement.textContent : null;
+}
+
+function navUnderScore(event) {
+  document.querySelectorAll('.navbarItem').forEach(item => item.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+function toggleForm(show) {
+  const formContainer = document.getElementById('add-container');
+  formContainer.style.display = show ? 'block' : 'none';
 }
 
 document.getElementById('report-form').addEventListener('submit', function (event) {
@@ -87,10 +214,6 @@ document.getElementById('report-form').addEventListener('submit', function (even
 
   const formData = new FormData(this);
 
-  for (let [key, value] of formData.entries()) {
-    console.log(`${key}: ${value}`);
-  }
-
   const data = {
     description: formData.get('description'),
     start_date: formData.get('start_date'),
@@ -99,8 +222,6 @@ document.getElementById('report-form').addEventListener('submit', function (even
     category: formData.get('category'),
     pictures: formData.getAll('pictures')
   };
-
-  console.log(data);
 
   const submitData = new FormData();
   submitData.append('description', data.description);
@@ -124,5 +245,5 @@ document.getElementById('report-form').addEventListener('submit', function (even
     .catch(error => console.error('Error:', error));
 });
 
-
 fetchReports();
+toggleForm(false);
