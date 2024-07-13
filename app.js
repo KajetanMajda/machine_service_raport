@@ -12,7 +12,6 @@ const basePath = isPkg ? path.dirname(process.execPath) : __dirname;
 app.use(express.static(path.join(basePath, 'public')));
 app.use('/uploads', express.static(path.join(basePath, 'uploads')));
 
-
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, path.join(basePath, 'uploads'));
@@ -54,6 +53,7 @@ app.get('/api/reports', (req, res) => {
   res.json({ maintenance: reports });
 });
 
+// Endpoint do dodawania nowego raportu
 app.post('/api/reports', upload.array('pictures', 10), (req, res) => {
   const { description, start_date, end_date, comments } = req.body;
   const category = req.body.category || 'Unknown';
@@ -72,6 +72,29 @@ app.post('/api/reports', upload.array('pictures', 10), (req, res) => {
   res.json({ id: newReport.id });
 });
 
+// Endpoint do aktualizacji istniejącego raportu
+app.put('/api/reports/:id', (req, res) => {
+  const data = readData();
+  const reportId = parseInt(req.params.id, 10);
+  const reportIndex = data.maintenance.findIndex(report => report.id === reportId);
+
+  if (reportIndex !== -1) {
+    const { description, start_date, end_date, comments } = req.body;
+    data.maintenance[reportIndex] = {
+      ...data.maintenance[reportIndex],
+      description,
+      start_date,
+      end_date,
+      comments
+    };
+    writeData(data);
+    res.json(data.maintenance[reportIndex]);
+  } else {
+    res.status(404).json({ error: 'Report not found' });
+  }
+});
+
+// Serve index.html
 app.get('/', (req, res) => {
   res.sendFile(path.join(basePath, 'public', 'index.html'));
 });

@@ -77,6 +77,11 @@ function fetchReports(category = null) {
 function editReport(reportItem, report) {
   reportItem.innerHTML = '';
 
+  const idInput = document.createElement('input');
+  idInput.type = 'hidden';
+  idInput.id = 'report-id';
+  idInput.value = report.id;
+
   const descriptionInput = document.createElement('textarea');
   descriptionInput.id = 'description';
   descriptionInput.name = 'description';
@@ -126,9 +131,10 @@ function editReport(reportItem, report) {
 
   const saveButton = document.createElement('button');
   saveButton.className = 'confirmButton';
-  saveButton.textContent = 'Zatwierdź';
-  saveButton.addEventListener('click', () => {
-    saveReport(report.id, descriptionInput.value, startDateInput.value, endDateInput.value, commentsInput.value);
+  saveButton.textContent = 'Zatwierdz';
+  saveButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    saveReport(idInput.value, descriptionInput.value, startDateInput.value, endDateInput.value, commentsInput.value);
   });
 
   const cancelButton = document.createElement('button');
@@ -141,6 +147,7 @@ function editReport(reportItem, report) {
   buttonEditContainer.appendChild(saveButton);
   buttonEditContainer.appendChild(cancelButton);
 
+  reportItem.appendChild(idInput);
   reportItem.appendChild(descriptionInput);
   reportItem.appendChild(startDateLabel);
   reportItem.appendChild(startDateInput);
@@ -167,7 +174,12 @@ function saveReport(id, description, startDate, endDate, comments) {
     },
     body: JSON.stringify(data)
   })
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
     .then(() => {
       fetchReports();
     })
@@ -176,6 +188,11 @@ function saveReport(id, description, startDate, endDate, comments) {
 
 function filterReports(category) {
   fetchReports(category);
+}
+
+function getActiveCategory() {
+  const activeElement = document.querySelector('.navbarItem.active');
+  return activeElement ? activeElement.textContent : null;
 }
 
 document.getElementById('report-form').addEventListener('submit', function (event) {
@@ -216,10 +233,5 @@ document.getElementById('report-form').addEventListener('submit', function (even
     })
     .catch(error => console.error('Error:', error));
 });
-
-function getActiveCategory() {
-  const activeElement = document.querySelector('.navbarItem.active');
-  return activeElement ? activeElement.textContent : null;
-}
 
 fetchReports();
