@@ -24,25 +24,14 @@ const upload = multer({ storage });
 
 const dataFilePath = path.join(basePath, 'data.json');
 
-if (!fs.existsSync(dataFilePath)) {
-  const initialData = {
-    maintenance: [
-      {
-        id: 1,
-        category: "Skoda",
-        description: "testets",
-        start_date: "12-12-2012",
-        end_date: "12-12-2013",
-        comments: "hsudhaosd",
-        pictures: "path/to/picture1.jpg"
-      }
-    ]
-  };
-  fs.writeFileSync(dataFilePath, JSON.stringify(initialData, null, 2));
-}
-
 // Wczytanie danych z pliku JSON
-const readData = () => JSON.parse(fs.readFileSync(dataFilePath, 'utf8'));
+const readData = () => {
+  if (fs.existsSync(dataFilePath)) {
+    return JSON.parse(fs.readFileSync(dataFilePath, 'utf8'));
+  }
+  return { maintenance: [] }; 
+};
+
 const writeData = (data) => fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
 
 // Endpoint do pobierania wszystkich raportów lub filtracji po kategorii

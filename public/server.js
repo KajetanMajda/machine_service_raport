@@ -195,6 +195,11 @@ function getActiveCategory() {
   return activeElement ? activeElement.textContent : null;
 }
 
+function navUnderScore(event) {
+  document.querySelectorAll('.navbarItem').forEach(item => item.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
 document.getElementById('report-form').addEventListener('submit', function (event) {
   event.preventDefault();
 
