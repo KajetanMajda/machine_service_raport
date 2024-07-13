@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <nav>
@@ -42,20 +44,20 @@
             </div>
 
             <div id="add-container" class="add-container">
-                <form id="report-form" enctype="multipart/form-data">   
+                <form id="report-form" enctype="multipart/form-data">
                     <textarea type="text" id="description" name="description" placeholder="Opis problemu"></textarea>
                     <label for="start_date" class="startDate">Data wystąpienia</label>
                     <input type="date" id="start_date" class="startDate" name="start_date">
                     <label for="end_date" class="endDate">Data naprawy</label>
-                    <input type="date" id="end_date" name="end_date" class="endDate"placeholder="Data naprawy">
+                    <input type="date" id="end_date" name="end_date" class="endDate" placeholder="Data naprawy">
                     <textarea type="text" id="comments" name="comments" placeholder="Uwagi"></textarea>
                     <input type="file" id="pictures" name="pictures" placeholder="Załącz zdjęcia" multiple>
                     <button type="submit" class="addButton">Dodaj</button>
                     <input type="hidden" id="category" name="category">
                 </form>
-            </div>
-            <div class="report-line">
-                <hr>
+                <div class="report-line">
+                    <hr>
+                </div>
             </div>
         </div>
     </div>
@@ -63,4 +65,5 @@
     <script src="server.js"></script>
     <script src="nav.js"></script>
 </body>
+
 </html>
