@@ -188,6 +188,7 @@ function saveReport(id, description, startDate, endDate, comments) {
 
 function filterReports(category) {
   fetchReports(category);
+  toggleForm(category !== null);
 }
 
 function getActiveCategory() {
@@ -198,6 +199,11 @@ function getActiveCategory() {
 function navUnderScore(event) {
   document.querySelectorAll('.navbarItem').forEach(item => item.classList.remove('active'));
   event.target.classList.add('active');
+}
+
+function toggleForm(show) {
+  const formContainer = document.getElementById('add-container');
+  formContainer.style.display = show ? 'block' : 'none';
 }
 
 document.getElementById('report-form').addEventListener('submit', function (event) {
@@ -240,3 +246,4 @@ document.getElementById('report-form').addEventListener('submit', function (even
 });
 
 fetchReports();
+toggleForm(false);
