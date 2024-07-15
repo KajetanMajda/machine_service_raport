@@ -2,6 +2,8 @@
   --BG-main-colour: #FFD700;
   --BG-secound-colour: #FFFFFF;
   --BG-third-colour: #333;
+  --BG-black: #000000;
+  --BG-shadow-colour: #808080;
 }
 
 
@@ -40,12 +42,12 @@ body {
 .container {
   width: 100%;
   min-height: 95vh;
-  background-color: white;
+  background-color: var(--BG-secound-colour);
 }
 
 nav {
-  background-color: #333;
-  color: white;
+  background-color: var(--BG-third-colour);
+  color: var(--BG-secound-colour);
   padding: 10px 0;
   margin-bottom:20px;
 }
@@ -135,7 +137,7 @@ nav {
   width: 7%;
   height: 26px;
   border: none;
-  box-shadow: 5px 2px 2px gray; ;
+  box-shadow: 5px 2px 2px var(  --BG-shadow-colour);
   background-color: var(--BG-main-colour);
   border-radius: 10px;
   cursor: pointer;
@@ -170,8 +172,8 @@ nav {
 
 .hover-button {
   background-color: var(--BG-main-colour);
-  color: black;
-  box-shadow: 5px 2px 2px gray;
+  color: var(  --BG-black);
+  box-shadow: 5px 2px 2px var(  --BG-shadow-colour);
   border: none;
   font-weight: bold;
   border-radius: 50%;
@@ -214,7 +216,7 @@ nav {
   width: 11%;
   height: 26px;
   border: none;
-  box-shadow: 5px 2px 2px gray;
+  box-shadow: 5px 2px 2px var(  --BG-shadow-colour);
   background-color: var(--BG-main-colour);
   border-radius: 10px;
   cursor: pointer;
@@ -231,7 +233,7 @@ nav {
 
 .confirmButton, .backButton, .deleteButton{
   border: none;
-  box-shadow: 5px 2px 2px gray; ;
+  box-shadow: 5px 2px 2px var(  --BG-shadow-colour); ;
   background-color: var(--BG-main-colour);
   border-radius: 10px;
   cursor: pointer;
