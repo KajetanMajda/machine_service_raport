@@ -83,6 +83,21 @@ app.put('/api/reports/:id', (req, res) => {
   }
 });
 
+// Endpoint do usuwania raportu
+app.delete('/api/reports/:id', (req, res) => {
+  const data = readData();
+  const reportId = parseInt(req.params.id, 10);
+  const newReports = data.maintenance.filter(report => report.id !== reportId);
+
+  if (newReports.length === data.maintenance.length) {
+    return res.status(404).json({ error: 'Report not found' });
+  }
+
+  data.maintenance = newReports;
+  writeData(data);
+  res.status(204).end();
+});
+
 // Serve index.html
 app.get('/', (req, res) => {
   res.sendFile(path.join(basePath, 'public', 'index.html'));

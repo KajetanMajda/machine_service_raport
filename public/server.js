@@ -144,8 +144,16 @@ function editReport(reportItem, report) {
     fetchReports();
   });
 
+  const deleteButton = document.createElement('button');
+  deleteButton.className = 'deleteButton';
+  deleteButton.textContent = 'Usuń';
+  deleteButton.addEventListener('click', () => {
+    deleteReport(idInput.value);
+  });
+
   buttonEditContainer.appendChild(saveButton);
   buttonEditContainer.appendChild(cancelButton);
+  buttonEditContainer.appendChild(deleteButton);
 
   reportItem.appendChild(idInput);
   reportItem.appendChild(descriptionInput);
@@ -184,6 +192,22 @@ function saveReport(id, description, startDate, endDate, comments) {
       fetchReports();
     })
     .catch(error => console.error('Error saving data:', error));
+}
+
+function deleteReport(id) {
+  fetch(`/api/reports/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      fetchReports();
+    })
+    .catch(error => console.error('Error deleting data:', error));
 }
 
 function filterReports(category) {

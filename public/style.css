@@ -176,7 +176,7 @@ nav {
   width: 11%;
 }
 
-.confirmButton, .backButton{
+.confirmButton, .backButton, .deleteButton{
   border: none;
   box-shadow: 5px 2px 2px gray; ;
   background-color: var(--BG-main-colour);
