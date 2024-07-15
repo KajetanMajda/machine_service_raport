@@ -45,6 +45,7 @@ function fetchReports(category = null) {
 
         reportEditButton.addEventListener('click', () => {
           editReport(reportItem, report);
+          toggleRemoveButtons(reportItem);
         });
 
         reportItem.appendChild(reportDescription);
@@ -59,11 +60,29 @@ function fetchReports(category = null) {
         reportPictures.className = 'report-picture-container';
 
         report.pictures.forEach(path => {
+          const imgContainer = document.createElement('div');
+          imgContainer.className = 'img-container';
+
           const img = document.createElement('img');
           img.className = 'report-image';
           img.src = path.startsWith('http') ? path : `/uploads/${path}`;
           img.alt = 'report picture';
-          reportPictures.appendChild(img);
+
+          const hoverButtonContainer = document.createElement('div');
+          hoverButtonContainer.className = 'hover-button-container';
+
+          const hoverButton = document.createElement('button');
+          hoverButton.className = 'hover-button';
+          hoverButton.textContent = 'Usuń';
+          hoverButton.hidden = true;
+          hoverButton.addEventListener('click', () => {
+            removeImage(report, path);
+          });
+
+          hoverButtonContainer.appendChild(hoverButton);
+          imgContainer.appendChild(img);
+          imgContainer.appendChild(hoverButtonContainer);
+          reportPictures.appendChild(imgContainer);
         });
 
         const reportLine = document.createElement('div');
@@ -78,6 +97,13 @@ function fetchReports(category = null) {
       });
     })
     .catch(error => console.error('Error fetching data:', error));
+}
+
+function toggleRemoveButtons(reportItem) {
+  const removeButtons = reportItem.querySelectorAll('.hover-button');
+  removeButtons.forEach(button => {
+    button.hidden = !button.hidden;
+  });
 }
 
 function setStatusClass(element, status) {
@@ -114,8 +140,7 @@ function editReport(reportItem, report) {
   startDateInput.className = 'startDate';
   startDateInput.type = 'date';
   startDateInput.name = 'start_date';
-  const today = new Date().toISOString().split('T')[0];
-  startDateInput.value = today;
+  startDateInput.value = report.start_date || new Date().toISOString().split('T')[0];
 
   const endDateLabel = document.createElement('label');
   endDateLabel.htmlFor = 'end_date';
@@ -154,7 +179,7 @@ function editReport(reportItem, report) {
     statusSelect.appendChild(option);
   });
 
-  statusSelect.value = report.status || 'selection';
+  statusSelect.value = report.status || 'Status';
 
   const commentsInput = document.createElement('textarea');
   commentsInput.id = 'comments';
@@ -178,6 +203,7 @@ function editReport(reportItem, report) {
   saveButton.addEventListener('click', (e) => {
     e.preventDefault();
     saveReport(idInput.value, descriptionInput.value, startDateInput.value, endDateInput.value, statusSelect.value, commentsInput.value);
+    toggleRemoveButtons(reportItem);
   });
 
   const cancelButton = document.createElement('button');
@@ -185,6 +211,7 @@ function editReport(reportItem, report) {
   cancelButton.textContent = 'Cofnij';
   cancelButton.addEventListener('click', () => {
     fetchReports();
+    toggleRemoveButtons(reportItem);
   });
 
   const deleteButton = document.createElement('button');
@@ -192,6 +219,7 @@ function editReport(reportItem, report) {
   deleteButton.textContent = 'Usuń';
   deleteButton.addEventListener('click', () => {
     deleteReport(idInput.value);
+    toggleRemoveButtons(reportItem);
   });
 
   buttonEditContainer.appendChild(saveButton);
