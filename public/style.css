@@ -69,18 +69,21 @@ nav {
 }
 
 .report-description-header{
-  width: 38%;
+  width: 31%;
   text-align: center;
 }
 
-.report-date-end-header, .report-date-start-header {
+.report-date-end-header, .report-date-start-header, .raport-status-header {
   width: 14%;
   text-align: center;
 }
 
 .report-comments-header {
-  width: 38%;
+  width: 24%;
   text-align: center;
+}
+.spacer-header{
+  width: 7%;
 }
 
 
@@ -93,17 +96,17 @@ nav {
 
 .report-description {
   text-align: center;
-  width: 36%;
+  width: 31.2%;
 }
 
-.report-date-start, .report-date-end {
+.report-date-start, .report-date-end, .report-status {
   text-align: center;
-  width: 13.5%;
+  width: 14.2%;
 }
 
 .report-comments {
   text-align: center;
-  width: 30%;
+  width: 24.3%;
 }
 
 .report-edit-button{
@@ -176,7 +179,7 @@ nav {
   width: 11%;
 }
 
-.confirmButton, .backButton{
+.confirmButton, .backButton, .deleteButton{
   border: none;
   box-shadow: 5px 2px 2px gray; ;
   background-color: var(--BG-main-colour);
@@ -185,4 +188,19 @@ nav {
   font-weight: bold;
   margin-bottom:5px;
   width: 100%;
+}
+
+.status-done {
+  color: green;
+  font-weight: bold;
+}
+
+.status-almost-done {
+  color: orange;
+  font-weight: bold;
+}
+
+.status-not-done {
+  color: red;
+  font-weight: bold;
 }
