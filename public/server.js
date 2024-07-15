@@ -127,7 +127,7 @@ function editReport(reportItem, report) {
   statusSelect.className = 'selection-status';
   statusSelect.name = 'status';
   const statusOptions = [
-    { value: 'selection', text: 'Status', disabled: true, selected: true },
+    { value: '', text: 'Status', disabled: true, selected: true },
     { value: 'Zrobione', text: 'Zrobione' },
     { value: 'W trakcie', text: 'W trakcie' },
     { value: 'Do zrobienia', text: 'Do zrobienia' }
