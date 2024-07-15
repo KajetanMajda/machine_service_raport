@@ -159,7 +159,7 @@ nav {
   height: 50px;
 }
 
-.img-container .hover-button-container {
+.img-container:hover .hover-button-container {
   display: block;
 }
 

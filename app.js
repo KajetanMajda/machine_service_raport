@@ -100,6 +100,24 @@ app.delete('/api/reports/:id', (req, res) => {
   res.status(204).end();
 });
 
+// Endpoint do usuwania zdjęcia z raportu
+app.delete('/api/reports/:id/image', (req, res) => {
+  const { id } = req.params;
+  const { path } = req.body;
+
+  const data = readData();
+  const reportIndex = data.maintenance.findIndex(report => report.id === parseInt(id));
+
+  if (reportIndex === -1) {
+    return res.status(404).json({ error: 'Report not found' });
+  }
+
+  data.maintenance[reportIndex].pictures = data.maintenance[reportIndex].pictures.filter(picture => picture !== path);
+
+  writeData(data);
+  res.status(204).end();
+});
+
 // Serve index.html
 app.get('/', (req, res) => {
   res.sendFile(path.join(basePath, 'public', 'index.html'));

@@ -72,11 +72,10 @@ function fetchReports(category = null) {
           hoverButtonContainer.className = 'hover-button-container';
 
           const hoverButton = document.createElement('button');
-          hoverButton.className = 'hover-button';
+          hoverButton.className = 'hover-button hidden'; // Initially hidden
           hoverButton.textContent = 'Usuń';
-          hoverButton.hidden = true;
           hoverButton.addEventListener('click', () => {
-            removeImage(report, path);
+            removeImage(report.id, path);
           });
 
           hoverButtonContainer.appendChild(hoverButton);
@@ -99,10 +98,22 @@ function fetchReports(category = null) {
     .catch(error => console.error('Error fetching data:', error));
 }
 
+function addHiddenClass(element) {
+  element.classList.add('hidden');
+}
+
+function removeHiddenClass(element) {
+  element.classList.remove('hidden');
+}
+
 function toggleRemoveButtons(reportItem) {
   const removeButtons = reportItem.querySelectorAll('.hover-button');
   removeButtons.forEach(button => {
-    button.hidden = !button.hidden;
+    if (button.classList.contains('hidden')) {
+      removeHiddenClass(button);
+    } else {
+      addHiddenClass(button);
+    }
   });
 }
 
@@ -281,6 +292,23 @@ function deleteReport(id) {
       fetchReports();
     })
     .catch(error => console.error('Error deleting data:', error));
+}
+
+function removeImage(reportId, imagePath) {
+  fetch(`/api/reports/${reportId}/image`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ path: imagePath })
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      fetchReports();
+    })
+    .catch(error => console.error('Error removing image:', error));
 }
 
 function filterReports(category) {
