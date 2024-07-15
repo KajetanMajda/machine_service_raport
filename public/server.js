@@ -29,6 +29,10 @@ function fetchReports(category = null) {
         reportComments.className = 'report-comments';
         reportComments.textContent = report.comments;
 
+        const reportStatus = document.createElement('p');
+        reportStatus.className = 'report-status';
+        reportStatus.textContent = report.status;
+
         const reportId = document.createElement('p');
         reportId.className = 'report-id';
         reportId.textContent = report.id;
@@ -45,6 +49,7 @@ function fetchReports(category = null) {
         reportItem.appendChild(reportDescription);
         reportItem.appendChild(reportStartDate);
         reportItem.appendChild(reportEndDate);
+        reportItem.appendChild(reportStatus);
         reportItem.appendChild(reportComments);
         reportItem.appendChild(reportEditButton);
         reportItem.appendChild(reportId);
@@ -98,7 +103,8 @@ function editReport(reportItem, report) {
   startDateInput.className = 'startDate';
   startDateInput.type = 'date';
   startDateInput.name = 'start_date';
-  startDateInput.value = report.start_date;
+  const today = new Date().toISOString().split('T')[0];
+  startDateInput.value = today;
 
   const endDateLabel = document.createElement('label');
   endDateLabel.htmlFor = 'end_date';
@@ -112,6 +118,31 @@ function editReport(reportItem, report) {
   endDateInput.name = 'end_date';
   endDateInput.placeholder = 'Data naprawy';
   endDateInput.value = report.end_date;
+
+  startDateInput.addEventListener('change', () => {
+    endDateInput.min = startDateInput.value;
+  });
+
+  const statusSelect = document.createElement('select');
+  statusSelect.className = 'selection-status';
+  statusSelect.name = 'status';
+  const statusOptions = [
+    { value: 'selection', text: 'Status', disabled: true, selected: true },
+    { value: 'Zrobione', text: 'Zrobione' },
+    { value: 'W trakcie', text: 'W trakcie' },
+    { value: 'Do zrobienia', text: 'Do zrobienia' }
+  ];
+
+  statusOptions.forEach(optionData => {
+    const option = document.createElement('option');
+    option.value = optionData.value;
+    option.textContent = optionData.text;
+    if (optionData.disabled) option.disabled = true;
+    if (optionData.selected) option.selected = true;
+    statusSelect.appendChild(option);
+  });
+
+  statusSelect.value = report.status || 'selection';
 
   const commentsInput = document.createElement('textarea');
   commentsInput.id = 'comments';
@@ -134,7 +165,7 @@ function editReport(reportItem, report) {
   saveButton.textContent = 'Zatwierdz';
   saveButton.addEventListener('click', (e) => {
     e.preventDefault();
-    saveReport(idInput.value, descriptionInput.value, startDateInput.value, endDateInput.value, commentsInput.value);
+    saveReport(idInput.value, descriptionInput.value, startDateInput.value, endDateInput.value, statusSelect.value, commentsInput.value);
   });
 
   const cancelButton = document.createElement('button');
@@ -161,17 +192,19 @@ function editReport(reportItem, report) {
   reportItem.appendChild(startDateInput);
   reportItem.appendChild(endDateLabel);
   reportItem.appendChild(endDateInput);
+  reportItem.appendChild(statusSelect);
   reportItem.appendChild(commentsInput);
   reportItem.appendChild(picturesInput);
   reportItem.appendChild(buttonEditContainer);
 }
 
-function saveReport(id, description, startDate, endDate, comments) {
+function saveReport(id, description, startDate, endDate, status, comments) {
   const data = {
     id: id,
     description: description,
     start_date: startDate,
     end_date: endDate,
+    status: status,
     comments: comments
   };
 
@@ -242,6 +275,7 @@ document.getElementById('report-form').addEventListener('submit', function (even
     description: formData.get('description'),
     start_date: formData.get('start_date'),
     end_date: formData.get('end_date'),
+    status: formData.get('status'),
     comments: formData.get('comments'),
     category: formData.get('category'),
     pictures: formData.getAll('pictures')
@@ -251,6 +285,7 @@ document.getElementById('report-form').addEventListener('submit', function (even
   submitData.append('description', data.description);
   submitData.append('start_date', data.start_date);
   submitData.append('end_date', data.end_date);
+  submitData.append('status', data.status);
   submitData.append('comments', data.comments);
   submitData.append('category', data.category);
   data.pictures.forEach((picture, index) => {

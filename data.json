@@ -4,9 +4,10 @@
       "id": 1,
       "category": "Skoda",
       "description": "Wyciek oleju",
-      "start_date": "2023-08-24",
-      "end_date": "",
-      "comments": "",
+      "start_date": "2024-07-15",
+      "end_date": "2024-07-19",
+      "status": "Zrobione",
+      "comments": "teste tesd. gdgajsgdia das dk ashd heisch iasdhia hsdI hauiosd haio sDHI Ashli ahusiD HUIas hduioasD",
       "pictures": [
         "image.png",
         "image2.jpg"
@@ -18,6 +19,7 @@
       "description": "BRAK OBROTU STOŁU - PROBLEMY Z OLEJEM",
       "start_date": "2023-10-06",
       "end_date": "",
+      "status": "",
       "comments": "",
       "pictures": [
         "image.png"
@@ -29,6 +31,7 @@
       "description": "AWARIA MOCOWANIA NARZĘDZIA",
       "start_date": "2023-10-06",
       "end_date": "",
+      "status": "",
       "comments": "",
       "pictures": [
         "image.png"
@@ -40,6 +43,7 @@
       "description": "AWARIA SAMROWANIA STOŁU",
       "start_date": "2023-10-06",
       "end_date": "",
+      "status": "",
       "comments": "",
       "pictures": []
     },
@@ -49,6 +53,7 @@
       "description": "Poziomowanie słupy",
       "start_date": "",
       "end_date": "",
+      "status": "",
       "comments": "",
       "pictures": []
     },
@@ -58,6 +63,7 @@
       "description": "Belka do zrobienia",
       "start_date": "",
       "end_date": "",
+      "status": "",
       "comments": "",
       "pictures": []
     },
@@ -67,6 +73,7 @@
       "description": "Uszczelnienia do wymiany",
       "start_date": "",
       "end_date": "",
+      "status": "",
       "comments": "",
       "pictures": []
     },
@@ -76,6 +83,7 @@
       "description": "Problemy z zapadkami 24.10.23 - diagnoza Jarka Makowskiego do wymiany sprzęgło na belce. ",
       "start_date": "2023-10-18",
       "end_date": "",
+      "status": "",
       "comments": "",
       "pictures": []
     },
@@ -85,6 +93,7 @@
       "description": "Do wymiany stycznik od reglowania belek ( zamówiony 01.12.2023 - dostawa)",
       "start_date": "2023-11-22",
       "end_date": "",
+      "status": "",
       "comments": "",
       "pictures": []
     },
@@ -93,6 +102,7 @@
       "category": "SC33",
       "description": "Pozycjonowanie belki ( Jarek Makowski)",
       "start_date": "",
+      "status": "",
       "end_date": "",
       "comments": "20 ORAZ 21 TYDZIEŃ JAREK ZAJĘTY",
       "pictures": []
@@ -103,6 +113,7 @@
       "description": "Kołkowanie supportu ( po pkt. 8)",
       "start_date": "",
       "end_date": "",
+      "status": "",
       "comments": "",
       "pictures": []
     },
@@ -112,6 +123,7 @@
       "description": "Błąd NCK - diagnoza Jarka Makowskiego do wymiany wentylator w szafie ( w trakcie obróbki na gotowo staje maszyna)",
       "start_date": "2023-10-24",
       "end_date": "2023-10-25",
+      "status": "",
       "comments": "",
       "pictures": []
     },
@@ -121,6 +133,7 @@
       "description": "Liniał do czyszczenia osi X",
       "start_date": "2024-01-11",
       "end_date": "",
+      "status": "",
       "comments": "",
       "pictures": []
     },
@@ -130,6 +143,7 @@
       "description": "Kontrola geometri i regulacja",
       "start_date": "",
       "end_date": "",
+      "status": "",
       "comments": "",
       "pictures": []
     },
@@ -139,6 +153,7 @@
       "description": "Wyciek ze stołu",
       "start_date": "2023-08-24",
       "end_date": "",
+      "status": "",
       "comments": "",
       "pictures": []
     },
@@ -148,6 +163,7 @@
       "description": "Sprawdzenie doublina + wymiana",
       "start_date": "2024-01-11",
       "end_date": "2024-03-19",
+      "status": "",
       "comments": "15.02.2024 - zamówiono złe łożyska - 16.02.2024 pomiary odpowiedniego łożyska 19.02.2024 - DOSTARCZONO ODPOWIEDNIE ŁOŻYSKA - BRAK ODPOWIEDZI ZE STRONY GRZEGORZA. 08.03.2024 - zakupiono nowe Oringi - czekamy na dostawę",
       "pictures": []
     },
@@ -157,6 +173,7 @@
       "description": "Smarowanie przekładni ",
       "start_date": "",
       "end_date": "",
+      "status": "",
       "comments": "",
       "pictures": [
         "1720620869441-images.png"
@@ -168,6 +185,7 @@
       "description": "Sprawdzenie chłodziarki",
       "start_date": "",
       "end_date": "",
+      "status": "",
       "comments": "",
       "pictures": []
     }

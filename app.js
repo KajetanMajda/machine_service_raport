@@ -29,7 +29,7 @@ const readData = () => {
   if (fs.existsSync(dataFilePath)) {
     return JSON.parse(fs.readFileSync(dataFilePath, 'utf8'));
   }
-  return { maintenance: [] }; 
+  return { maintenance: [] }; // Return an empty array if file doesn't exist
 };
 
 const writeData = (data) => fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
@@ -44,7 +44,7 @@ app.get('/api/reports', (req, res) => {
 
 // Endpoint do dodawania nowego raportu
 app.post('/api/reports', upload.array('pictures', 10), (req, res) => {
-  const { description, start_date, end_date, comments } = req.body;
+  const { description, start_date, end_date, status, comments } = req.body;
   const category = req.body.category || 'Unknown';
   const data = readData();
   const newReport = {
@@ -53,6 +53,7 @@ app.post('/api/reports', upload.array('pictures', 10), (req, res) => {
     description,
     start_date,
     end_date,
+    status,
     comments,
     pictures: req.files ? req.files.map(file => `${file.filename}`) : []
   };
@@ -68,12 +69,13 @@ app.put('/api/reports/:id', (req, res) => {
   const reportIndex = data.maintenance.findIndex(report => report.id === reportId);
 
   if (reportIndex !== -1) {
-    const { description, start_date, end_date, comments } = req.body;
+    const { description, start_date, end_date, status, comments } = req.body;
     data.maintenance[reportIndex] = {
       ...data.maintenance[reportIndex],
       description,
       start_date,
       end_date,
+      status,
       comments
     };
     writeData(data);

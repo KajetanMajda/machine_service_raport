@@ -69,18 +69,21 @@ nav {
 }
 
 .report-description-header{
-  width: 38%;
+  width: 31%;
   text-align: center;
 }
 
-.report-date-end-header, .report-date-start-header {
+.report-date-end-header, .report-date-start-header, .raport-status-header {
   width: 14%;
   text-align: center;
 }
 
 .report-comments-header {
-  width: 38%;
+  width: 24%;
   text-align: center;
+}
+.spacer-header{
+  width: 7%;
 }
 
 
@@ -93,17 +96,17 @@ nav {
 
 .report-description {
   text-align: center;
-  width: 36%;
+  width: 31.2%;
 }
 
-.report-date-start, .report-date-end {
+.report-date-start, .report-date-end, .report-status {
   text-align: center;
-  width: 13.5%;
+  width: 14.2%;
 }
 
 .report-comments {
   text-align: center;
-  width: 30%;
+  width: 24.3%;
 }
 
 .report-edit-button{
