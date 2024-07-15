@@ -128,12 +128,41 @@ nav {
   gap: 30px;
 }
 
+.img-container {
+  position: relative;
+  display: inline-block;
+}
+
 .report-image {
   width: 250px;
   height: 150px;
   border-radius: 5px;
   object-fit: cover;
 }
+
+.hover-button-container {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 100px;
+}
+
+.hover-button {
+  background-color: var(--BG-main-colour);
+  color: black;
+  box-shadow: 5px 2px 2px gray;
+  border: none;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+.img-container .hover-button-container {
+  display: block;
+}
+
 #report-form{
   display:flex;
   flex-direction: row;
@@ -164,7 +193,7 @@ nav {
   width: 11%;
   height: 26px;
   border: none;
-  box-shadow: 5px 2px 2px gray; ;
+  box-shadow: 5px 2px 2px gray;
   background-color: var(--BG-main-colour);
   border-radius: 10px;
   cursor: pointer;
