@@ -45,7 +45,6 @@ function fetchReports(category = null) {
 
         reportEditButton.addEventListener('click', () => {
           editReport(reportItem, report);
-          toggleRemoveButtons(reportItem);
         });
 
         reportItem.appendChild(reportDescription);
@@ -74,9 +73,13 @@ function fetchReports(category = null) {
           const hoverButton = document.createElement('button');
           hoverButton.className = 'hover-button';
           hoverButton.textContent = 'Usuń';
-          hoverButton.hidden = true;
           hoverButton.addEventListener('click', () => {
-            removeImage(report, path);
+
+            if (confirm('Czy napewno chcesz usunąc to zdjęcie?')) {
+              removeImage(report.id, path);
+            } else {
+              // Do nothing!
+            }
           });
 
           hoverButtonContainer.appendChild(hoverButton);
@@ -99,12 +102,6 @@ function fetchReports(category = null) {
     .catch(error => console.error('Error fetching data:', error));
 }
 
-function toggleRemoveButtons(reportItem) {
-  const removeButtons = reportItem.querySelectorAll('.hover-button');
-  removeButtons.forEach(button => {
-    button.hidden = !button.hidden;
-  });
-}
 
 function setStatusClass(element, status) {
   if (status === 'Zrobione') {
@@ -203,7 +200,6 @@ function editReport(reportItem, report) {
   saveButton.addEventListener('click', (e) => {
     e.preventDefault();
     saveReport(idInput.value, descriptionInput.value, startDateInput.value, endDateInput.value, statusSelect.value, commentsInput.value);
-    toggleRemoveButtons(reportItem);
   });
 
   const cancelButton = document.createElement('button');
@@ -211,7 +207,6 @@ function editReport(reportItem, report) {
   cancelButton.textContent = 'Cofnij';
   cancelButton.addEventListener('click', () => {
     fetchReports();
-    toggleRemoveButtons(reportItem);
   });
 
   const deleteButton = document.createElement('button');
@@ -219,7 +214,7 @@ function editReport(reportItem, report) {
   deleteButton.textContent = 'Usuń';
   deleteButton.addEventListener('click', () => {
     deleteReport(idInput.value);
-    toggleRemoveButtons(reportItem);
+
   });
 
   buttonEditContainer.appendChild(saveButton);
@@ -281,6 +276,23 @@ function deleteReport(id) {
       fetchReports();
     })
     .catch(error => console.error('Error deleting data:', error));
+}
+
+function removeImage(reportId, imagePath) {
+  fetch(`/api/reports/${reportId}/image`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ path: imagePath })
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      fetchReports();
+    })
+    .catch(error => console.error('Error removing image:', error));
 }
 
 function filterReports(category) {
