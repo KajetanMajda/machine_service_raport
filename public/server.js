@@ -45,7 +45,6 @@ function fetchReports(category = null) {
 
         reportEditButton.addEventListener('click', () => {
           editReport(reportItem, report);
-          toggleRemoveButtons(reportItem);
         });
 
         reportItem.appendChild(reportDescription);
@@ -72,10 +71,15 @@ function fetchReports(category = null) {
           hoverButtonContainer.className = 'hover-button-container';
 
           const hoverButton = document.createElement('button');
-          hoverButton.className = 'hover-button hidden'; // Initially hidden
+          hoverButton.className = 'hover-button';
           hoverButton.textContent = 'Usuń';
           hoverButton.addEventListener('click', () => {
-            removeImage(report.id, path);
+
+            if (confirm('Czy napewno chcesz usunąc to zdjęcie?')) {
+              removeImage(report.id, path);
+            } else {
+              // Do nothing!
+            }
           });
 
           hoverButtonContainer.appendChild(hoverButton);
@@ -98,24 +102,6 @@ function fetchReports(category = null) {
     .catch(error => console.error('Error fetching data:', error));
 }
 
-function addHiddenClass(element) {
-  element.classList.add('hidden');
-}
-
-function removeHiddenClass(element) {
-  element.classList.remove('hidden');
-}
-
-function toggleRemoveButtons(reportItem) {
-  const removeButtons = reportItem.querySelectorAll('.hover-button');
-  removeButtons.forEach(button => {
-    if (button.classList.contains('hidden')) {
-      removeHiddenClass(button);
-    } else {
-      addHiddenClass(button);
-    }
-  });
-}
 
 function setStatusClass(element, status) {
   if (status === 'Zrobione') {
@@ -214,7 +200,6 @@ function editReport(reportItem, report) {
   saveButton.addEventListener('click', (e) => {
     e.preventDefault();
     saveReport(idInput.value, descriptionInput.value, startDateInput.value, endDateInput.value, statusSelect.value, commentsInput.value);
-    toggleRemoveButtons(reportItem);
   });
 
   const cancelButton = document.createElement('button');
@@ -222,7 +207,6 @@ function editReport(reportItem, report) {
   cancelButton.textContent = 'Cofnij';
   cancelButton.addEventListener('click', () => {
     fetchReports();
-    toggleRemoveButtons(reportItem);
   });
 
   const deleteButton = document.createElement('button');
@@ -230,7 +214,7 @@ function editReport(reportItem, report) {
   deleteButton.textContent = 'Usuń';
   deleteButton.addEventListener('click', () => {
     deleteReport(idInput.value);
-    toggleRemoveButtons(reportItem);
+
   });
 
   buttonEditContainer.appendChild(saveButton);
