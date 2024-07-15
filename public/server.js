@@ -32,6 +32,7 @@ function fetchReports(category = null) {
         const reportStatus = document.createElement('p');
         reportStatus.className = 'report-status';
         reportStatus.textContent = report.status;
+        setStatusClass(reportStatus, report.status);
 
         const reportId = document.createElement('p');
         reportId.className = 'report-id';
@@ -77,6 +78,16 @@ function fetchReports(category = null) {
       });
     })
     .catch(error => console.error('Error fetching data:', error));
+}
+
+function setStatusClass(element, status) {
+  if (status === 'Zrobione') {
+    element.classList.add('status-done');
+  } else if (status === 'W trakcie') {
+    element.classList.add('status-almost-done');
+  } else if (status === 'Do zrobienia') {
+    element.classList.add('status-not-done');
+  }
 }
 
 function editReport(reportItem, report) {
@@ -127,10 +138,11 @@ function editReport(reportItem, report) {
   statusSelect.className = 'selection-status';
   statusSelect.name = 'status';
   const statusOptions = [
-    { value: '', text: 'Status', disabled: true, selected: true },
+    { value: 'Status', text: 'Status', disabled: true, selected: true, hidden: true },
     { value: 'Zrobione', text: 'Zrobione' },
     { value: 'W trakcie', text: 'W trakcie' },
-    { value: 'Do zrobienia', text: 'Do zrobienia' }
+    { value: 'Do zrobienia', text: 'Do zrobienia' },
+    { value: '', text: 'Brak statusu' }
   ];
 
   statusOptions.forEach(optionData => {

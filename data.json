@@ -17,9 +17,9 @@
       "id": 2,
       "category": "Skoda",
       "description": "BRAK OBROTU STOŁU - PROBLEMY Z OLEJEM",
-      "start_date": "2023-10-06",
+      "start_date": "2024-07-15",
       "end_date": "",
-      "status": "",
+      "status": "W trakcie",
       "comments": "",
       "pictures": [
         "image.png"
@@ -29,9 +29,9 @@
       "id": 3,
       "category": "Skoda",
       "description": "AWARIA MOCOWANIA NARZĘDZIA",
-      "start_date": "2023-10-06",
+      "start_date": "2024-07-15",
       "end_date": "",
-      "status": "",
+      "status": "Do zrobienia",
       "comments": "",
       "pictures": [
         "image.png"
@@ -41,7 +41,7 @@
       "id": 4,
       "category": "Skoda",
       "description": "AWARIA SAMROWANIA STOŁU",
-      "start_date": "2023-10-06",
+      "start_date": "2024-07-15",
       "end_date": "",
       "status": "",
       "comments": "",

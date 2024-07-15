@@ -189,3 +189,18 @@ nav {
   margin-bottom:5px;
   width: 100%;
 }
+
+.status-done {
+  color: green;
+  font-weight: bold;
+}
+
+.status-almost-done {
+  color: orange;
+  font-weight: bold;
+}
+
+.status-not-done {
+  color: red;
+  font-weight: bold;
+}
