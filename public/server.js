@@ -1,10 +1,13 @@
-function fetchReports(category = null, criteria = null, order = null) {
+function fetchReports(category = null, criteria = null, order = null, query = null) {
   let url = '/api/reports';
   if (category) {
     url += `?category=${encodeURIComponent(category)}`;
   }
   if (criteria && order) {
     url += `${category ? '&' : '?'}sort=${criteria}&order=${order}`;
+  }
+  if (query) {
+    url += `${category || criteria ? '&' : '?'}query=${encodeURIComponent(query)}`;
   }
   fetch(url)
     .then(response => response.json())
@@ -13,6 +16,19 @@ function fetchReports(category = null, criteria = null, order = null) {
       reportListContainer.innerHTML = '';
 
       data.maintenance.forEach(report => {
+        if (query) {
+          const lowerQuery = query.toLowerCase();
+          if (
+            !report.description.toLowerCase().includes(lowerQuery) &&
+            !report.start_date.toLowerCase().includes(lowerQuery) &&
+            !report.end_date.toLowerCase().includes(lowerQuery) &&
+            !report.status.toLowerCase().includes(lowerQuery) &&
+            !report.comments.toLowerCase().includes(lowerQuery)
+          ) {
+            return;
+          }
+        }
+
         const reportItem = document.createElement('div');
         reportItem.className = 'report-item';
 

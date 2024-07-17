@@ -37,32 +37,39 @@ const writeData = (data) => fs.writeFileSync(dataFilePath, JSON.stringify(data, 
 // Endpoint do pobierania wszystkich raportów lub filtracji po kategorii
 app.get('/api/reports', (req, res) => {
   const data = readData();
-  const { category, sort, order } = req.query;
-  let reports = category ? data.maintenance.filter(report => report.category === category) : data.maintenance;
+  let reports = data.maintenance;
+
+  const { category, sort, order, query } = req.query;
+
+  if (category) {
+    reports = reports.filter(report => report.category === category);
+  }
+
+  if (query) {
+    const lowerQuery = query.toLowerCase();
+    reports = reports.filter(report => {
+      return (
+        report.description.toLowerCase().includes(lowerQuery) ||
+        report.start_date.toLowerCase().includes(lowerQuery) ||
+        report.end_date.toLowerCase().includes(lowerQuery) ||
+        report.status.toLowerCase().includes(lowerQuery) ||
+        report.comments.toLowerCase().includes(lowerQuery)
+      );
+    });
+  }
 
   if (sort && order) {
-    reports = reports.sort((a, b) => {
-      if (sort === 'description' || sort === 'comments') {
-        const textA = a[sort].toUpperCase();
-        const textB = b[sort].toUpperCase();
-        if (textA < textB) return order === 'asc' ? -1 : 1;
-        if (textA > textB) return order === 'asc' ? 1 : -1;
-        return 0;
-      } else if (sort === 'start_date' || sort === 'end_date') {
-        const dateA = new Date(a[sort]);
-        const dateB = new Date(b[sort]);
-        return order === 'asc' ? dateA - dateB : dateB - dateA;
-      } else if (sort === 'status') {
-        const statusOrder = ['Brak statusu', 'Do zrobienia', 'W trakcie', 'Zrobione'];
-        return order === 'asc' ? statusOrder.indexOf(a.status) - statusOrder.indexOf(b.status) : statusOrder.indexOf(b.status) - statusOrder.indexOf(a.status);
-      }
+    reports.sort((a, b) => {
+      const fieldA = a[sort] ? a[sort].toLowerCase() : '';
+      const fieldB = b[sort] ? b[sort].toLowerCase() : '';
+      if (fieldA < fieldB) return order === 'asc' ? -1 : 1;
+      if (fieldA > fieldB) return order === 'asc' ? 1 : -1;
       return 0;
     });
   }
 
   res.json({ maintenance: reports });
 });
-
 
 // Endpoint do dodawania nowego raportu
 app.post('/api/reports', upload.array('pictures', 10), (req, res) => {

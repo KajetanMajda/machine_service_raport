@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const orderSelect = document.getElementById('order-select');
     const searchButton = document.querySelector('.searchButton');
     const resetButton = document.querySelector('.resetButton');
-    const searchInput = document.querySelector('input[type="text"]');
+    const searchInput = document.querySelector('.searchInput');
 
     const optionsMap = {
         description: [
@@ -66,6 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.value = '';
         const activeCategory = getActiveCategory();
         fetchReports(activeCategory);
+    });
+
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+        const activeCategory = getActiveCategory();
+        fetchReports(activeCategory, null, null, query);
     });
     fetchReports('SC33');
 });
