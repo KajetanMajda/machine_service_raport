@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const criteriaSelect = document.getElementById('criteria-select');
     const orderSelect = document.getElementById('order-select');
     const searchButton = document.querySelector('.searchButton');
+    const resetButton = document.querySelector('.resetButton');
+    const searchInput = document.querySelector('input[type="text"]');
 
     const optionsMap = {
         description: [
@@ -57,5 +59,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeCategory = getActiveCategory();
         fetchReports(activeCategory, criteria, order);
     });
+
+    resetButton.addEventListener('click', () => {
+        criteriaSelect.value = '';
+        orderSelect.innerHTML = '<option value=""></option>';
+        searchInput.value = '';
+        const activeCategory = getActiveCategory();
+        fetchReports(activeCategory);
+    });
     fetchReports('SC33');
-    });  
+});
+
+function getActiveCategory() {
+  const activeElement = document.querySelector('.navbarItem.active');
+  return activeElement ? activeElement.textContent : null;
+}
