@@ -37,8 +37,37 @@ const writeData = (data) => fs.writeFileSync(dataFilePath, JSON.stringify(data, 
 // Endpoint do pobierania wszystkich raportów lub filtracji po kategorii
 app.get('/api/reports', (req, res) => {
   const data = readData();
-  const category = req.query.category;
-  const reports = category ? data.maintenance.filter(report => report.category === category) : data.maintenance;
+  let reports = data.maintenance;
+
+  const { category, sort, order, query } = req.query;
+
+  if (category) {
+    reports = reports.filter(report => report.category === category);
+  }
+
+  if (query) {
+    const lowerQuery = query.toLowerCase();
+    reports = reports.filter(report => {
+      return (
+        report.description.toLowerCase().includes(lowerQuery) ||
+        report.start_date.toLowerCase().includes(lowerQuery) ||
+        report.end_date.toLowerCase().includes(lowerQuery) ||
+        report.status.toLowerCase().includes(lowerQuery) ||
+        report.comments.toLowerCase().includes(lowerQuery)
+      );
+    });
+  }
+
+  if (sort && order) {
+    reports.sort((a, b) => {
+      const fieldA = a[sort] ? a[sort].toLowerCase() : '';
+      const fieldB = b[sort] ? b[sort].toLowerCase() : '';
+      if (fieldA < fieldB) return order === 'asc' ? -1 : 1;
+      if (fieldA > fieldB) return order === 'asc' ? 1 : -1;
+      return 0;
+    });
+  }
+
   res.json({ maintenance: reports });
 });
 

@@ -10,9 +10,9 @@
 
 <body>
     <div class="container">
-        <nav>
+        <nav class="navTop">
             <div class="navbarContainer">
-                <p class="navbarItem" onclick="filterReports('SC33'); navUnderScore(event)">SC33</p>
+                <p class="navbarItem active" onclick="filterReports('SC33'); navUnderScore(event)">SC33</p>
                 <p class="navbarItem" onclick="filterReports('SC53'); navUnderScore(event)">SC53</p>
                 <p class="navbarItem" onclick="filterReports('Schiees'); navUnderScore(event)">Schiees</p>
                 <p class="navbarItem" onclick="filterReports('Skoda'); navUnderScore(event)">Skoda</p>
@@ -20,9 +20,27 @@
                 <p class="navbarItem" onclick="filterReports('Hankook'); navUnderScore(event)">Hankook</p>
                 <p class="navbarItem" onclick="filterReports('Hass/Harnaś'); navUnderScore(event)">Hass/Harnaś</p>
                 <p class="navbarItem" onclick="filterReports('Suwnica'); navUnderScore(event)">Suwnica</p>
-                <p class="navbarItem active" onclick="filterReports(null); navUnderScore(event)">Wszytsko</p>
             </div>
         </nav>
+        <nav class="navBottom">
+            <div class="navbarContainerSecound">
+                <select name="criteria" id="criteria-select">
+                    <option value="" disabled selected>Wybierz kategorię</option>
+                    <option value="description">Opis problemu</option>
+                    <option value="start_date">Data wystąpienia</option>
+                    <option value="end_date">Data naprawy</option>
+                    <option value="status">Status</option>
+                    <option value="comments">Uwagi</option>
+                </select>
+                <select name="order" id="order-select">
+                    <option value=""></option>
+                </select>
+                <input class="searchInput" type="text" placeholder="Wyszukaj">
+                <button class="resetButton">Resetuj</button>
+                <button class="searchButton"><i class="fa-solid fa-magnifying-glass"></i>Wyszukaj</button>
+            </div>
+        </nav>
+        
         <div class="report-display">
             <div class="report-line">
                 <hr>
@@ -77,6 +95,7 @@
 
     <script src="server.js"></script>
     <script src="nav.js"></script>
+    <script src="navBottom.js"></script>
     <script src="footer.js"></script>
     <script src="date.js"></script>
 </body>
