@@ -2,6 +2,7 @@
   --BG-main-colour: #FFD700;
   --BG-secound-colour: #FFFFFF;
   --BG-third-colour: #333;
+  --BG-fourth-colour: #4b4b4b;
   --BG-black: #000000;
   --BG-shadow-colour: #808080;
 }
@@ -45,16 +46,28 @@ body {
   background-color: var(--BG-secound-colour);
 }
 
-nav {
+.navTop {
   background-color: var(--BG-third-colour);
   color: var(--BG-secound-colour);
   padding: 10px 0;
-  margin-bottom:20px;
 }
 
 .navbarContainer {
   display: flex;
   justify-content: space-around;
+}
+
+.navBottom {
+  background-color: var(--BG-fourth-colour);
+  color: var(--BG-secound-colour);
+  padding: 10px 0;
+  margin-bottom:20px;
+}
+
+.navbarContainerSecound{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .navbarItem {
