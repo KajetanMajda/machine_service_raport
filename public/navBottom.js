@@ -57,9 +57,5 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeCategory = getActiveCategory();
         fetchReports(activeCategory, criteria, order);
     });
-});
-
-function getActiveCategory() {
-  const activeElement = document.querySelector('.navbarItem.active');
-  return activeElement ? activeElement.textContent : null;
-}
+    fetchReports('SC33');
+    });  

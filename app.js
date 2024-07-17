@@ -42,14 +42,19 @@ app.get('/api/reports', (req, res) => {
 
   if (sort && order) {
     reports = reports.sort((a, b) => {
-      if (sort === 'start_date' || sort === 'end_date') {
-        return order === 'asc' ? new Date(a[sort]) - new Date(b[sort]) : new Date(b[sort]) - new Date(a[sort]);
-      }
-      if (order === 'az') {
-        return a[sort].localeCompare(b[sort]);
-      }
-      if (order === 'za') {
-        return b[sort].localeCompare(a[sort]);
+      if (sort === 'description' || sort === 'comments') {
+        const textA = a[sort].toUpperCase();
+        const textB = b[sort].toUpperCase();
+        if (textA < textB) return order === 'asc' ? -1 : 1;
+        if (textA > textB) return order === 'asc' ? 1 : -1;
+        return 0;
+      } else if (sort === 'start_date' || sort === 'end_date') {
+        const dateA = new Date(a[sort]);
+        const dateB = new Date(b[sort]);
+        return order === 'asc' ? dateA - dateB : dateB - dateA;
+      } else if (sort === 'status') {
+        const statusOrder = ['Brak statusu', 'Do zrobienia', 'W trakcie', 'Zrobione'];
+        return order === 'asc' ? statusOrder.indexOf(a.status) - statusOrder.indexOf(b.status) : statusOrder.indexOf(b.status) - statusOrder.indexOf(a.status);
       }
       return 0;
     });
@@ -57,6 +62,7 @@ app.get('/api/reports', (req, res) => {
 
   res.json({ maintenance: reports });
 });
+
 
 // Endpoint do dodawania nowego raportu
 app.post('/api/reports', upload.array('pictures', 10), (req, res) => {
