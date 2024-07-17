@@ -1,7 +1,10 @@
-function fetchReports(category = null) {
+function fetchReports(category = null, criteria = null, order = null) {
   let url = '/api/reports';
   if (category) {
-    url += `?category=${category}`;
+    url += `?category=${encodeURIComponent(category)}`;
+  }
+  if (criteria && order) {
+    url += `${category ? '&' : '?'}sort=${criteria}&order=${order}`;
   }
   fetch(url)
     .then(response => response.json())
@@ -74,11 +77,8 @@ function fetchReports(category = null) {
           hoverButton.className = 'hover-button';
           hoverButton.textContent = 'Usuń';
           hoverButton.addEventListener('click', () => {
-
             if (confirm('Czy napewno chcesz usunąc to zdjęcie?')) {
               removeImage(report.id, path);
-            } else {
-              // Do nothing!
             }
           });
 
@@ -101,7 +101,6 @@ function fetchReports(category = null) {
     })
     .catch(error => console.error('Error fetching data:', error));
 }
-
 
 function setStatusClass(element, status) {
   if (status === 'Zrobione') {

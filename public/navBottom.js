@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const criteriaSelect = document.getElementById('criteria-select');
     const orderSelect = document.getElementById('order-select');
+    const searchButton = document.querySelector('.searchButton');
 
     const optionsMap = {
         description: [
@@ -49,4 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     criteriaSelect.dispatchEvent(new Event('change'));
+
+    searchButton.addEventListener('click', () => {
+        const criteria = criteriaSelect.value;
+        const order = orderSelect.value;
+        const activeCategory = getActiveCategory();
+        fetchReports(activeCategory, criteria, order);
+    });
 });
+
+function getActiveCategory() {
+  const activeElement = document.querySelector('.navbarItem.active');
+  return activeElement ? activeElement.textContent : null;
+}

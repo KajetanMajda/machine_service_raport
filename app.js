@@ -37,8 +37,24 @@ const writeData = (data) => fs.writeFileSync(dataFilePath, JSON.stringify(data, 
 // Endpoint do pobierania wszystkich raportów lub filtracji po kategorii
 app.get('/api/reports', (req, res) => {
   const data = readData();
-  const category = req.query.category;
-  const reports = category ? data.maintenance.filter(report => report.category === category) : data.maintenance;
+  const { category, sort, order } = req.query;
+  let reports = category ? data.maintenance.filter(report => report.category === category) : data.maintenance;
+
+  if (sort && order) {
+    reports = reports.sort((a, b) => {
+      if (sort === 'start_date' || sort === 'end_date') {
+        return order === 'asc' ? new Date(a[sort]) - new Date(b[sort]) : new Date(b[sort]) - new Date(a[sort]);
+      }
+      if (order === 'az') {
+        return a[sort].localeCompare(b[sort]);
+      }
+      if (order === 'za') {
+        return b[sort].localeCompare(a[sort]);
+      }
+      return 0;
+    });
+  }
+
   res.json({ maintenance: reports });
 });
 
