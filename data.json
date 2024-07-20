@@ -18,8 +18,8 @@
       "category": "Skoda",
       "description": "BRAK OBROTU STOŁU - PROBLEMY Z OLEJEM",
       "start_date": "2024-07-15",
-      "end_date": "",
-      "status": "W trakcie",
+      "end_date": "Zrobione",
+      "status": "Zrobione",
       "comments": "",
       "pictures": []
     },
@@ -29,7 +29,7 @@
       "description": "AWARIA MOCOWANIA NARZĘDZIA",
       "start_date": "2024-07-15",
       "end_date": "",
-      "status": "Do zrobienia",
+      "status": "Zrobione",
       "comments": "",
       "pictures": [
         "image.png"
@@ -41,7 +41,7 @@
       "description": "AWARIA SAMROWANIA STOŁU",
       "start_date": "2023-10-06",
       "end_date": "",
-      "status": "",
+      "status": "Zrobione",
       "comments": "",
       "pictures": []
     },
@@ -51,7 +51,7 @@
       "description": "Poziomowanie słupy",
       "start_date": "",
       "end_date": "",
-      "status": "",
+      "status": "Zrobione",
       "comments": "",
       "pictures": []
     },
@@ -61,7 +61,7 @@
       "description": "Belka do zrobienia",
       "start_date": "",
       "end_date": "",
-      "status": "",
+      "status": "Zrobione",
       "comments": "",
       "pictures": []
     },
@@ -71,7 +71,7 @@
       "description": "Uszczelnienia do wymiany",
       "start_date": "",
       "end_date": "",
-      "status": "",
+      "status": "Zrobione",
       "comments": "",
       "pictures": []
     },
@@ -81,7 +81,7 @@
       "description": "Problemy z zapadkami 24.10.23 - diagnoza Jarka Makowskiego do wymiany sprzęgło na belce. ",
       "start_date": "2023-10-18",
       "end_date": "",
-      "status": "",
+      "status": "Zrobione",
       "comments": "",
       "pictures": []
     },
@@ -91,7 +91,7 @@
       "description": "Do wymiany stycznik od reglowania belek ( zamówiony 01.12.2023 - dostawa)",
       "start_date": "2023-11-22",
       "end_date": "",
-      "status": "",
+      "status": "Zrobione",
       "comments": "",
       "pictures": []
     },
@@ -101,7 +101,7 @@
       "description": "Pozycjonowanie belki ( Jarek Makowski)",
       "start_date": "",
       "status": "",
-      "end_date": "",
+      "end_date": "Zrobione",
       "comments": "20 ORAZ 21 TYDZIEŃ JAREK ZAJĘTY",
       "pictures": []
     },
@@ -111,7 +111,7 @@
       "description": "Kołkowanie supportu ( po pkt. 8)",
       "start_date": "",
       "end_date": "",
-      "status": "",
+      "status": "Zrobione",
       "comments": "",
       "pictures": []
     },
@@ -121,7 +121,7 @@
       "description": "Błąd NCK - diagnoza Jarka Makowskiego do wymiany wentylator w szafie ( w trakcie obróbki na gotowo staje maszyna)",
       "start_date": "2023-10-24",
       "end_date": "2023-10-25",
-      "status": "",
+      "status": "Zrobione",
       "comments": "",
       "pictures": []
     },
@@ -131,7 +131,7 @@
       "description": "Liniał do czyszczenia osi X",
       "start_date": "2024-01-11",
       "end_date": "",
-      "status": "",
+      "status": "Zrobione",
       "comments": "",
       "pictures": []
     },
@@ -141,7 +141,7 @@
       "description": "Kontrola geometri i regulacja",
       "start_date": "",
       "end_date": "",
-      "status": "",
+      "status": "Zrobione",
       "comments": "",
       "pictures": []
     },
@@ -151,7 +151,7 @@
       "description": "Wyciek ze stołu",
       "start_date": "2023-08-24",
       "end_date": "",
-      "status": "",
+      "status": "Zrobione",
       "comments": "",
       "pictures": []
     },
@@ -161,7 +161,7 @@
       "description": "Sprawdzenie doublina + wymiana",
       "start_date": "2024-01-11",
       "end_date": "2024-03-19",
-      "status": "",
+      "status": "Zrobione",
       "comments": "15.02.2024 - zamówiono złe łożyska - 16.02.2024 pomiary odpowiedniego łożyska 19.02.2024 - DOSTARCZONO ODPOWIEDNIE ŁOŻYSKA - BRAK ODPOWIEDZI ZE STRONY GRZEGORZA. 08.03.2024 - zakupiono nowe Oringi - czekamy na dostawę",
       "pictures": []
     },
@@ -171,7 +171,7 @@
       "description": "Smarowanie przekładni ",
       "start_date": "",
       "end_date": "",
-      "status": "",
+      "status": "Zrobione",
       "comments": "",
       "pictures": []
     },
@@ -181,7 +181,317 @@
       "description": "Sprawdzenie chłodziarki",
       "start_date": "",
       "end_date": "",
-      "status": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 19,
+      "category": "Schiees",
+      "description": "Dorobinie osłony",
+      "start_date": "",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 20,
+      "category": "Schiees",
+      "description": "Remont przekładni wrzeciennika",
+      "start_date": "",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 21,
+      "category": "Schiees",
+      "description": "Spadek ciśnienia na pompie hydraulicznej - częste wyrzucanie bezpiecznika",
+      "start_date": "2023-10-16",
+      "end_date": "2023-10-18",
+      "status": "Zrobione",
+      "comments": "wymiana pompy",
+      "pictures": []
+    },
+    {
+      "id": 22,
+      "category": "Schiees",
+      "description": "Przegrzanie wrzeciennika temp 45 * ",
+      "start_date": "2023-10-23",
+      "end_date": "2023-10-24",
+      "status": "Zrobione",
+      "comments": "czyszczenie układu chłodzącego",
+      "pictures": []
+    },
+    {
+      "id": 23,
+      "category": "Schiees",
+      "description": "Problemy z chłodziwem podczas włączenia chłodziwa program w maszynie staje",
+      "start_date": "2023-10-23",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 24,
+      "category": "Schiees",
+      "description": "Problemy z posuwem X - do rozebrania przekładnia lub liniał.",
+      "start_date": "2023-11-06",
+      "end_date": "2023-11-08",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 25,
+      "category": "Schiees",
+      "description": "Dorobienie osłony od stołu",
+      "start_date": "2023-11-27",
+      "end_date": "2023-11-28",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 25,
+      "category": "Schiees",
+      "description": "Zkorygowanie pkt 0 stołu względem wrzecziona ( przesunięcie 20mm)",
+      "start_date": "2023-11-27",
+      "end_date": "2023-11-28",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 26,
+      "category": "Schiees",
+      "description": "Wydemontowanie płyty głownej od klimatyzatora - przekazanie do naprawy ",
+      "start_date": "2023-11-27",
+      "end_date": "2024-01-03",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 27,
+      "category": "Schiees",
+      "description": "Wymiana styczników",
+      "start_date": "2024-05-06",
+      "end_date": "",
+      "status": "W trakcie",
+      "comments": "10.02.2024 - Wymiana styczników 10.02.2024 17.02.2024 - Wymiana styczników 27.02.2024 - wymiana styczników 16.06.2024 - wymiana styczników",
+      "pictures": []
+    },
+    {
+      "id": 28,
+      "category": "Schiees",
+      "description": "Wymiana zgarniaczy w osłonie od stołu oraz osi X",
+      "start_date": "2023-11-27",
+      "end_date": "2024-01-15",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 29,
+      "category": "Schiees",
+      "description": "Przetwornik do wymiany od strony liniału",
+      "start_date": "2024-01-11",
+      "end_date": "2024-01-20",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 30,
+      "category": "Schiees",
+      "description": "Układ chłodzący zalać glikolem ",
+      "start_date": "2024-01-11",
+      "end_date": "2024-01-20",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 31,
+      "category": "Schiees",
+      "description": "Złożenie zapasowej przekładni",
+      "start_date": "2023-12-13",
+      "end_date": "",
+      "status": "W trakcie",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 32,
+      "category": "Schiees",
+      "description": "Sprawdzenie ustawienie geometri",
+      "start_date": "2023-11-27",
+      "end_date": "",
+      "status": "W trakcie",
+      "comments": "Geometria sprawdzona - 13.03.2024 przyjazd serwisanta w celu omówienia.",
+      "pictures": []
+    },
+    {
+      "id": 33,
+      "category": "Schiees",
+      "description": "Częsty błąd nieosiągnięty zakres obrotów Nr 4121",
+      "start_date": "2024-04-08",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 34,
+      "category": "Schiees",
+      "description": "Maszyna robi owal 0,8 mm prawdopodobnie luz osi X do sprawdzenia.",
+      "start_date": "2024-03-26",
+      "end_date": "",
+      "status": "W trakcie",
+      "comments": "Grzegorz",
+      "pictures": []
+    },
+    {
+      "id": 35,
+      "category": "Schiees",
+      "description": "Sprawdzenie kątówki., 90 stopni nie jest  w osi",
+      "start_date": "2024-02-14",
+      "end_date": "2024-02-15",
+      "status": "Zrobione",
+      "comments": "Info J. Makowski: Dziś poprawiliśmy ustawienie głowicy kątowej na schiess. Był błąd 0.3mm/300 przejazdu. Teraz jest 0.01 do 0.03/300.",
+      "pictures": []
+    },
+    {
+      "id": 36,
+      "category": "Schiees",
+      "description": "Nabój do smarowania śruby Y",
+      "start_date": "2024-01-08",
+      "end_date": "2024-03-07",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 37,
+      "category": "Schiees",
+      "description": "Wymiana płyty głownej w chłodziarce + czynnik + sprawdzenie szczelności 28.02.2024 - PRZYJAZD KRUSZEWSKIEGO",
+      "start_date": "2024-01-24",
+      "end_date": "2024-03-22",
+      "status": "Zrobione",
+      "comments": "Informacja od Kruszewskiego: Płyta po regenarcji - nie załącza sprężarki oraz wenttlatora. Płyta nowa innego typu. Zdjęcie nr  6 Powinny być 2 kondesatora. Płyta zareklamowana 22.03.2024 - płta sprawdzona zregenorwana - spręzarka uruchomiona",
+      "pictures": []
+    },
+    {
+      "id": 38,
+      "category": "Schiees",
+      "description": "Problem z zapchanymi filrami M3+K1-B10 (stół) oraz podwójny od wrzeciennika M5+U8-B5. ZDJĘCIE 2",
+      "start_date": "2024-02-10",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "15.02.2024 - Wymieniono filtry ",
+      "pictures": []
+    },
+    {
+      "id": 39,
+      "category": "Schiees",
+      "description": "Podczas obrotu stołu następuje kolizja z osłoną od osi Y. Sprawdzenie krańcówek .",
+      "start_date": "2024-02-13",
+      "end_date": "2023-10-16",
+      "status": "Zrobione",
+      "comments": "Brak ograniczenia na osi W. Błąd operatora - w programie musi być uzględniona wartość przejazdu.",
+      "pictures": []
+    },
+    {
+      "id": 40,
+      "category": "Schiees",
+      "description": "",
+      "start_date": "",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 41,
+      "category": "Schiees",
+      "description": "Błąd pomiarowy obwodu silnika C. Po rozmowie z J. Makowskim błąd przetwornika.",
+      "start_date": "2024-02-19",
+      "end_date": "2024-02-19",
+      "status": "Zrobione",
+      "comments": "Przetwornik osi C zgłaszał błąd z niewiadomoego powodu. J. Makowski wyłączył kontrolę na jego sygnałem pojeździł osi i przywrócił sygnał. - maszyna ruszyła Diagnoza : Sygnał z przetwornika może być na granicy mocy sygnału że lub coś \"podlazlo\" pod głowicę.",
+      "pictures": []
+    },
+    {
+      "id": 42,
+      "category": "Schiees",
+      "description": "Wymiana oleju.",
+      "start_date": "2024-03-27",
+      "end_date": "2024-03-28",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 43,
+      "category": "Schiees",
+      "description": "Zawory dławiące.",
+      "start_date": "2024-05-13",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "Zamowione",
+      "pictures": []
+    },
+    {
+      "id": 45,
+      "category": "Schiees",
+      "description": "RYGLE NA WSZYSTKICH FURTKACH ",
+      "start_date": "2024-05-13",
+      "end_date": "",
+      "status": "W trakcie",
+      "comments": "OFERTA NA RYGLE - J. MAKOWSKI: oferta na kabel  e-mail",
+      "pictures": []
+    },
+    {
+      "id": 46,
+      "category": "Schiees",
+      "description": "MODUŁ OD KOMUNIKACJI Z LINIĄ  Y",
+      "start_date": "2024-05-27",
+      "end_date": "",
+      "status": "Do zrobienia",
+      "comments": "Zamowić naprawę",
+      "pictures": []
+    },
+    {
+      "id": 47,
+      "category": "Schiees",
+      "description": "WENTYLATOR NA NAPĘDZIĘ DO WYMIANY OD OSI Y",
+      "start_date": "2024-06-03",
+      "end_date": "2024-06-03",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 48,
+      "category": "Schiees",
+      "description": "AWARIA POMPY OD HYDROTATYKI STOŁU",
+      "start_date": "2024-06-27",
+      "end_date": "",
+      "status": "Do zrobienia",
+      "comments": "Zakupione 4 pompy zamienne o wydajnosci 30 BAR 02.07.2024 - przyjazd grzeska wytypowanie pomp folgowski o wydajnosci 2 litrow  na minute oraz 5 litrow na minute",
+      "pictures": []
+    },
+    {
+      "id": 49,
+      "category": "Skoda",
+      "description": "Wyciek oleju",
+      "start_date": "2023-08-24",
+      "end_date": "",
+      "status": "Zrobione",
       "comments": "",
       "pictures": []
     }
