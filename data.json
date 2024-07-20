@@ -494,6 +494,686 @@
       "status": "Zrobione",
       "comments": "",
       "pictures": []
+    },
+    {
+      "id": 50,
+      "category": "Skoda",
+      "description": "Wyciek oleju",
+      "start_date": "2023-08-24",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 51,
+      "category": "Skoda",
+      "description": "Sprawedzenie geometria",
+      "start_date": "",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 52,
+      "category": "Skoda",
+      "description": "BRAK OBROTU STOŁU - PROBLEMY Z OLEJEM",
+      "start_date": "2023-10-06",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 53,
+      "category": "Skoda",
+      "description": "AWARIA MOCOWANIA NARZĘDZIA",
+      "start_date": "2023-10-06",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 54,
+      "category": "Skoda",
+      "description": "AWARIA SAMROWANIA STOŁU",
+      "start_date": "2023-10-06",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 55,
+      "category": "Skoda",
+      "description": "Przeciek na pompie hydraulicznej ",
+      "start_date": "2023-10-10",
+      "end_date": "2023-10-10",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 56,
+      "category": "Skoda",
+      "description": "Przeciek na pompie hydraulicznej od smarowania stołu. Zakupić Simering",
+      "start_date": "2023-10-16",
+      "end_date": "2023-10-20",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 57,
+      "category": "Skoda",
+      "description": "Awaria kątówki - nie właściwe położenie kątówki względem zadanego kąta.",
+      "start_date": "2023-11-01",
+      "end_date": "2023-11-22",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 58,
+      "category": "Skoda",
+      "description": "Błąd mocowania luzowania narzędzia do wymiany krańcówka",
+      "start_date": "2023-11-06",
+      "end_date": "2023-11-08",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 59,
+      "category": "Skoda",
+      "description": "bład wentylatora E04 - 08.11.2023 - wykonano telefon do Marcin Kruszewski.( przyjedzie 09.11.2023)",
+      "start_date": "2023-11-08",
+      "end_date": "2023-11-09",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 60,
+      "category": "Skoda",
+      "description": "Wyciek na elektrozaworze - wymieniono oring (zamówiono 40 szt oringów)",
+      "start_date": "2023-11-25",
+      "end_date": "2023-11-25",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 61,
+      "category": "Skoda",
+      "description": "Wyciek z kątówki jednoskrętnej",
+      "start_date": "2023-11-27",
+      "end_date": "2023-11-27",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 62,
+      "category": "Skoda",
+      "description": "Ustawienie w PLC kątów na kątówce dwuskrętnej",
+      "start_date": "2023-11-28",
+      "end_date": "2023-12-02",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 63,
+      "category": "Skoda",
+      "description": "Awaria odciążania posuwu stołu ( chłodziwo w zbiorniku z olejem)",
+      "start_date": "2024-01-03",
+      "end_date": "2024-01-03",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 64,
+      "category": "Skoda",
+      "description": "Sprawdzenie geometria",
+      "start_date": "2024-01-08",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 65,
+      "category": "Skoda",
+      "description": "Podest na Skodzie.",
+      "start_date": "2024-01-08",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "Barierka zrobiona - kwestia odmalowania Zdj. 7",
+      "pictures": []
+    },
+    {
+      "id": 66,
+      "category": "Skoda",
+      "description": "Niedostateczne ciśnienie hydrauliki stołu",
+      "start_date": "2024-01-09",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "NISKI STAN OLEJU W ZBIORNICZKU WYSOKOCIŚNIENIOWYM ( ZBIORNIK ZNAJDUJE OBOK ZBIORNIKA OD HYDROSTATYKI)",
+      "pictures": []
+    },
+    {
+      "id": 67,
+      "category": "Skoda",
+      "description": "Awaria urządzenia mocującego osi 6",
+      "start_date": "2024-01-09",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 68,
+      "category": "Skoda",
+      "description": "Awaria hydrauliki osi 6",
+      "start_date": "2024-01-09",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 69,
+      "category": "Skoda",
+      "description": "czasowa awaria hydrauliki osi 6",
+      "start_date": "2024-01-09",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 70,
+      "category": "Skoda",
+      "description": "czasowa awaria hydrauliki stołu",
+      "start_date": "2024-01-09",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 71,
+      "category": "Skoda",
+      "description": "Sprawdzania ciśnien hydrostatyki ( kapilary)",
+      "start_date": "",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 72,
+      "category": "Skoda",
+      "description": "Problemy z oddaniem kontówki (  brak potwierdzenie z czujnika zluzowania głowicy)",
+      "start_date": "2024-01-11",
+      "end_date": "2024-01-14",
+      "status": "Zrobione",
+      "comments": "wyczyszczono tłoczek od luzowania narzędzia.",
+      "pictures": []
+    },
+    {
+      "id": 73,
+      "category": "Skoda",
+      "description": "Uszcelnienie stolu - blachy",
+      "start_date": "2024-01-10",
+      "end_date": "2024-03-16",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 74,
+      "category": "Skoda",
+      "description": "Wycieki oleju na łączeniu kątówki. ZDJĘCIE 1.",
+      "start_date": "2024-02-13",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 75,
+      "category": "Skoda",
+      "description": "Nideostateczne ciśnienie hydrauliki stoły błąd 700802        Awaria urządzenia mocującego osi 6 błąd 600602         Awaria hydrauliki osi 6 błąd 600602 zdjęcie 8",
+      "start_date": "2024-02-10",
+      "end_date": "2024-03-11",
+      "status": "Zrobione",
+      "comments": "Pozostał do zamontowania jeden siłownik . Przyjazd J. Makowskiego 11.03.2024 - zmiana w PLC czasu nabijania cisnienia w sensorach z 8 na 15 sekund. Prawdopodbnie jest wysiek lub układ zapowietrzony. ",
+      "pictures": []
+    },
+    {
+      "id": 76,
+      "category": "Skoda",
+      "description": "Wymiana oleju",
+      "start_date": "2024-03-28",
+      "end_date": "2024-03-28",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 77,
+      "category": "Skoda",
+      "description": "Czyszczenie klawiatury - problem z klawiszem \"0\"",
+      "start_date": "2024-03-27",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 78,
+      "category": "Skoda",
+      "description": "Geometria.",
+      "start_date": "2024-05-06",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "Robert, Maciek, Valery",
+      "pictures": []
+    },
+    {
+      "id": 79,
+      "category": "Skoda",
+      "description": "Ustawianie hydrostatyki osi x na małych posuwach szarpie.",
+      "start_date": "2024-05-12",
+      "end_date": "2024-05-14",
+      "status": "Zrobione",
+      "comments": "SPRAWDZONE CIŚNIENIA PRZEZ G. WITKOWSKIEGO CISNIENIA W NORMIE - ZALECA ZROBIENIE GEOMETRII",
+      "pictures": []
+    },
+    {
+      "id": 80,
+      "category": "Skoda",
+      "description": "Sprawdzanie hydrostatyki",
+      "start_date": "2024-05-28",
+      "end_date": "2024-06-04",
+      "status": "Zrobione",
+      "comments": "SPRAWDZENIE CIŚNIEN PRZEZ G. WITKOWSKIEGO CIŚNIENIA W NORMIE",
+      "pictures": []
+    },
+    {
+      "id": 81,
+      "category": "Skoda",
+      "description": "USTAWIENIE POZYCJI KĄTÓWKI",
+      "start_date": "2024-05-27",
+      "end_date": "2024-05-29",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 82,
+      "category": "Skoda",
+      "description": "PROBLEM Z OBROTEM STOŁU - PRAWDOPODBNIE ŁOŻYSKO NA NAPĘDZIE.",
+      "start_date": "2024-06-04",
+      "end_date": "2024-06-06",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 83,
+      "category": "Skoda",
+      "description": "GŁOWICE KĄTOWE ULEGŁY USZKODZENIU POPRZEZ UPADEK Z MAGAZYNKU - DO USTAWIENIA GEOMETRIA",
+      "start_date": "2024-06-29",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "INFO OD OPERATORA KTÓRY BYŁ Z JARKIEM W SOBOTE 29.06.2024: Zwiększona tolerancja błędu na osi Y dla posuwu szybkiego, płyta i głowica jednoskrętna ustawione od nowa położenie w stojaku, nie było żadnych problemów z pobraniem i oddaniem (trzeba kontrolować na rozgrzanej maszynie) niestety na obu głowicach do ustawienia geometria. Jednoskrętna błąd poniżej 0.1 na 300mm, probowaliśmy skorygować ale trzeba mechanika, nawet setki nie drgnęła. Dwuskrętna podobny błąd na dużej głowie, ale na małej korekta wymaga już otwarcia głowicy.",
+      "pictures": []
+    },
+    {
+      "id": 84,
+      "category": "Stanko",
+      "description": "Wyciek ze stołu",
+      "start_date": "2023-10-09",
+      "end_date": "2023-11-30",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 85,
+      "category": "Stanko",
+      "description": "Luz na śrubie osi x- na nakretce - kasowanie luzu .",
+      "start_date": "",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 86,
+      "category": "Stanko",
+      "description": "Belka-wkłądki i klin- przejazd belki (dopasować wkładki)/ doskrobać",
+      "start_date": "",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 87,
+      "category": "Stanko",
+      "description": "Geometria.",
+      "start_date": "",
+      "end_date": "",
+      "status": "W trakcie",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 88,
+      "category": "Stanko",
+      "description": "Rygiel do zamkniecia bramy (J. Makowski) ",
+      "start_date": "2023-10-26",
+      "end_date": "2024-03-22",
+      "status": "Zrobione",
+      "comments": "SPRAWNY INFO JAK DZIAŁA ZDJĘCIE NR 10",
+      "pictures": []
+    },
+    {
+      "id": 89,
+      "category": "Stanko",
+      "description": "Po uruchomieniu hydrostatyki stół \" pływa\" od 0.2 mm ",
+      "start_date": "2023-12-28",
+      "end_date": "2024-01-05",
+      "status": "Zrobione",
+      "comments": "Po obrobieniu detalu na chwile obecną nic na to nie wskazuje, że stół pływa",
+      "pictures": []
+    },
+    {
+      "id": 90,
+      "category": "Stanko",
+      "description": "Suwak - prostopadłość do osi stołu.",
+      "start_date": "2024-01-13",
+      "end_date": "",
+      "status": "W trakcie",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 91,
+      "category": "Stanko",
+      "description": "Sprawdzić ciśnienia w akumulatorach ",
+      "start_date": "2024-01-02",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 92,
+      "category": "Stanko",
+      "description": "Rysa ",
+      "start_date": "2024-01-03",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 93,
+      "category": "Stanko",
+      "description": "Uruchomienie drugiego Imaka",
+      "start_date": "2024-01-01",
+      "end_date": "",
+      "status": "W trakcie",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 94,
+      "category": "Stanko",
+      "description": "Światło w kabinie",
+      "start_date": "",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "BRAK MOŻLIWOŚCI MONTAŻU",
+      "pictures": []
+    },
+    {
+      "id": 95,
+      "category": "Stanko",
+      "description": "Awaria układu odciążania osi Z1 - niskie ciśnienie , Brak potwierdzenia zluzowania narzędzia ozi Z Zdj.9 ",
+      "start_date": "2024-03-11",
+      "end_date": "2024-03-11",
+      "status": "Zrobione",
+      "comments": "Spalony stycznik w szafie - wymieniony na nowy. ",
+      "pictures": []
+    },
+    {
+      "id": 96,
+      "category": "Hankook",
+      "description": "Zacina się ruch stołu do góry",
+      "start_date": "",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 97,
+      "category": "Hankook",
+      "description": "Zawór od podnoszenia palety",
+      "start_date": "",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 98,
+      "category": "Hankook",
+      "description": "Belka - góra dół",
+      "start_date": "",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 99,
+      "category": "Hankook",
+      "description": "Magazyn narzedzi - zacina się",
+      "start_date": "",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 100,
+      "category": "Hankook",
+      "description": "Montaż sondy ",
+      "start_date": "",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 101,
+      "category": "Hankook",
+      "description": "Przetarty wąż hydrauliczny ",
+      "start_date": "2023-10-06",
+      "end_date": "2023-10-06",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 102,
+      "category": "Hankook",
+      "description": "Przy wymianie narzędzie wywaliłol krańcówke w X brak mozłiwości wymiany narzędzia",
+      "start_date": "2023-10-17",
+      "end_date": "2023-10-17",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 103,
+      "category": "Hankook",
+      "description": "Wymiana węża hydraulicznego",
+      "start_date": "2023-10-17",
+      "end_date": "2023-10-17",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 104,
+      "category": "Hankook",
+      "description": "Niepokojący dźwięku przy załączeniu wysokich obrotów stołu -  ( Info od Rico- brak możliwości diagnozy bez dokumetacji technicznej).",
+      "start_date": "2023-11-07",
+      "end_date": "2023-11-08",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 105,
+      "category": "Hankook",
+      "description": "Ustawienie Imaka do osi stołu. ",
+      "start_date": "",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 106,
+      "category": "Hankook",
+      "description": "Montaz kątówki. D. Wasilewski",
+      "start_date": "2024-02-16",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "Geometria głowicy kątowej Łukasz Świech dorobienie - elementów montażowych. ",
+      "pictures": []
+    },
+    {
+      "id": 107,
+      "category": "Hankook",
+      "description": "Podczas obrotu stołu w jedną strone - słychać niepokojące dźwięki. Zdj. 5",
+      "start_date": "2024-02-19",
+      "end_date": "2024-02-22",
+      "status": "Zrobione",
+      "comments": "22.02.2024 - Zamontowano śrube na silniku - Brak śruby na silniku podczas obrotu silnik się klinował.",
+      "pictures": []
+    },
+    {
+      "id": 108,
+      "category": "Hankook",
+      "description": "CZUJNIK OD OBROTU STOŁU POŻYCZONY Z WALCÓW.",
+      "start_date": "2024-05-28",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 109,
+      "category": "Hass/Harnaś",
+      "description": "Wyciek z manometru.",
+      "start_date": "2023-10-24",
+      "end_date": "2023-10-26",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 110,
+      "category": "Hass/Harnaś",
+      "description": "Błędy na St45 - Konik poruszył się podczas trzymania części, Awaria nepędu osi B, Nadmierna temperatura wzmacniacza",
+      "start_date": "2023-11-27",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 111,
+      "category": "Hass/Harnaś",
+      "description": "Szyby do wymiany.",
+      "start_date": "2024-01-08",
+      "end_date": "2024-01-18",
+      "status": "Zrobione",
+      "comments": "G. Jarmuł przesunął szybę - pęknięcie schowane w obramowanie. Wymiary szyby Hass St 35 430x580 gr: 10,5 (2x5 kolejona)",
+      "pictures": []
+    },
+    {
+      "id": 112,
+      "category": "Hass/Harnaś",
+      "description": "Problem z osią X  Harnaś ( do wymiany prowadnice oraz wózki + łożyska)",
+      "start_date": "2024-01-08",
+      "end_date": "2024-02-01",
+      "status": "Zrobione",
+      "comments": "",
+      "pictures": []
+    },
+    {
+      "id": 113,
+      "category": "Hass/Harnaś",
+      "description": "Demak",
+      "start_date": "2024-01-16",
+      "end_date": "",
+      "status": "W trakcie",
+      "comments": "Wysłano zapytanie do Adrian . WSTRZYMANO ZAKUP",
+      "pictures": []
+    },
+    {
+      "id": 114,
+      "category": "Hass/Harnaś",
+      "description": "Spalony stycznik ",
+      "start_date": "2024-03-27",
+      "end_date": "2024-03-28",
+      "status": "Zrobione",
+      "comments": "Zmówiono nowy zdj.11",
+      "pictures": []
+    },
+    {
+      "id": 115,
+      "category": "Hass/Harnaś",
+      "description": "Stycznik od wrzeciona ( przekroczony zakres powyżej 200 %)",
+      "start_date": "2024-05-12",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "Zamowione",
+      "pictures": []
+    },
+    {
+      "id": 116,
+      "category": "Suwnica",
+      "description": "Pilot podczas opuszczania zacina się - zgłoszone do konserwatora. ",
+      "start_date": "2024-02-14",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "Pilot pożyczono z działu zbirników do momentu naprawy OC. Pilot wyczyszczono zamówiono u Adriana Gumke na joystick.",
+      "pictures": []
+    },
+    {
+      "id": 117,
+      "category": "Suwnica",
+      "description": "Niepokojące dźwieki z podtorza suwnicy",
+      "start_date": "2024-03-25",
+      "end_date": "",
+      "status": "Do zrobienia",
+      "comments": "25.03.2024 - zgłoszono D. Kobusowi - zamówił konserwatora. Czekamy na wycenę czyszczenia podtorza - prawdopodbnie zanieczyszczone zaolejone podtorze.  24.06.2024 - WYSŁANA DO ABUSA E-MAIL 04.07.2024 V- PRZYJAZD ABUSA",
+      "pictures": []
     }
   ]
 }
