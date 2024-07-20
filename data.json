@@ -8,10 +8,7 @@
       "end_date": "2024-07-19",
       "status": "Zrobione",
       "comments": "teste tesd. gdgajsgdia das dk ashd heisch iasdhia hsdI hauiosd haio sDHI Ashli ahusiD HUIas hduioasD",
-      "pictures": [
-        "image.png",
-        "image2.jpg"
-      ]
+      "pictures": []
     },
     {
       "id": 2,
@@ -31,9 +28,7 @@
       "end_date": "",
       "status": "Zrobione",
       "comments": "",
-      "pictures": [
-        "image.png"
-      ]
+      "pictures": []
     },
     {
       "id": 4,
@@ -49,7 +44,7 @@
       "id": 5,
       "category": "SC33",
       "description": "Poziomowanie słupy",
-      "start_date": "",
+      "start_date": "2024-07-20",
       "end_date": "",
       "status": "Zrobione",
       "comments": "",
@@ -373,7 +368,9 @@
       "end_date": "2024-03-22",
       "status": "Zrobione",
       "comments": "Informacja od Kruszewskiego: Płyta po regenarcji - nie załącza sprężarki oraz wenttlatora. Płyta nowa innego typu. Zdjęcie nr  6 Powinny być 2 kondesatora. Płyta zareklamowana 22.03.2024 - płta sprawdzona zregenorwana - spręzarka uruchomiona",
-      "pictures": ["Picture 6.png"]
+      "pictures": [
+        "Picture 6.png"
+      ]
     },
     {
       "id": 38,
@@ -383,7 +380,11 @@
       "end_date": "",
       "status": "Zrobione",
       "comments": "15.02.2024 - Wymieniono filtry ",
-      "pictures": ["Picture 2_1.jpg", "Picture 2_2.png", "Picture 2_3.png"]
+      "pictures": [
+        "Picture 2_1.jpg",
+        "Picture 2_2.png",
+        "Picture 2_3.png"
+      ]
     },
     {
       "id": 39,
@@ -523,7 +524,9 @@
       "end_date": "",
       "status": "Zrobione",
       "comments": "",
-      "pictures": ["Picture 4.png"]
+      "pictures": [
+        "Picture 4.png"
+      ]
     },
     {
       "id": 55,
@@ -633,7 +636,9 @@
       "end_date": "",
       "status": "Zrobione",
       "comments": "Barierka zrobiona - kwestia odmalowania Zdj. 7",
-      "pictures": ["Picture 7.png"]
+      "pictures": [
+        "Picture 7.png"
+      ]
     },
     {
       "id": 66,
@@ -723,7 +728,9 @@
       "end_date": "",
       "status": "Zrobione",
       "comments": "",
-      "pictures": ["Picture 1.jpg"]
+      "pictures": [
+        "Picture 1.jpg"
+      ]
     },
     {
       "id": 75,
@@ -733,7 +740,9 @@
       "end_date": "2024-03-11",
       "status": "Zrobione",
       "comments": "Pozostał do zamontowania jeden siłownik . Przyjazd J. Makowskiego 11.03.2024 - zmiana w PLC czasu nabijania cisnienia w sensorach z 8 na 15 sekund. Prawdopodbnie jest wysiek lub układ zapowietrzony. ",
-      "pictures": ["Picture 8.png"]
+      "pictures": [
+        "Picture 8.png"
+      ]
     },
     {
       "id": 76,
@@ -823,7 +832,9 @@
       "end_date": "2023-11-30",
       "status": "Zrobione",
       "comments": "",
-      "pictures": ["Picture 3.jpg"]
+      "pictures": [
+        "Picture 3.jpg"
+      ]
     },
     {
       "id": 85,
@@ -863,7 +874,9 @@
       "end_date": "2024-03-22",
       "status": "Zrobione",
       "comments": "SPRAWNY INFO JAK DZIAŁA ZDJĘCIE NR 10",
-      "pictures": ["Picture 10.png"]
+      "pictures": [
+        "Picture 10.png"
+      ]
     },
     {
       "id": 89,
@@ -933,7 +946,9 @@
       "end_date": "2024-03-11",
       "status": "Zrobione",
       "comments": "Spalony stycznik w szafie - wymieniony na nowy. ",
-      "pictures": ["Picture 9.png"]
+      "pictures": [
+        "Picture 9.png"
+      ]
     },
     {
       "id": 96,
@@ -1053,7 +1068,9 @@
       "end_date": "2024-02-22",
       "status": "Zrobione",
       "comments": "22.02.2024 - Zamontowano śrube na silniku - Brak śruby na silniku podczas obrotu silnik się klinował.",
-      "pictures": ["Picture 5.jpg"]
+      "pictures": [
+        "Picture 5.jpg"
+      ]
     },
     {
       "id": 108,
@@ -1123,7 +1140,10 @@
       "end_date": "2024-03-28",
       "status": "Zrobione",
       "comments": "Zmówiono nowy zdj.11",
-      "pictures": ["Picture 11_1.jpg", "Picture 11_2.png"]
+      "pictures": [
+        "Picture 11_1.jpg",
+        "Picture 11_2.png"
+      ]
     },
     {
       "id": 115,
