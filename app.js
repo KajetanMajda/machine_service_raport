@@ -171,6 +171,15 @@ app.delete('/api/reports/:id/image/:path', (req, res) => {
   res.status(204).end();
 });
 
+// Endpoint do pobierania raportów według kategorii i statusu
+app.get('/api/report/category/:category/status/:status', (req, res) => {
+  const data = readData();
+  const { category, status } = req.params;
+
+  const filteredReports = data.maintenance.filter(report => report.category === category && report.status === status);
+
+  res.json({ maintenance: filteredReports });
+});
 
 // Serve index.html
 app.get('/', (req, res) => {
