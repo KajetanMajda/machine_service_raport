@@ -7,7 +7,7 @@
       "start_date": "2024-07-15",
       "end_date": "2024-07-19",
       "status": "Zrobione",
-      "comments": "teste tesd. gdgajsgdia das dk ashd heisch iasdhia hsdI hauiosd haio sDHI Ashli ahusiD HUIas hduioasD",
+      "comments": "",
       "pictures": []
     },
     {
@@ -95,8 +95,8 @@
       "category": "SC33",
       "description": "Pozycjonowanie belki ( Jarek Makowski)",
       "start_date": "",
-      "status": "",
-      "end_date": "Zrobione",
+      "status": "Zrobione",
+      "end_date": "",
       "comments": "20 ORAZ 21 TYDZIEŃ JAREK ZAJĘTY",
       "pictures": []
     },
@@ -437,6 +437,16 @@
       "pictures": []
     },
     {
+      "id": 44,
+      "category": "Suwnica",
+      "description": "Pilot podczas opuszczania zacina się - zgłoszone do konserwatora. ",
+      "start_date": "2024-02-14",
+      "end_date": "",
+      "status": "Zrobione",
+      "comments": "Pilot pożyczono z działu zbirników do momentu naprawy OC. Pilot wyczyszczono zamówiono u Adriana Gumke na joystick.",
+      "pictures": []
+    },
+    {
       "id": 45,
       "category": "Schiees",
       "description": "RYGLE NA WSZYSTKICH FURTKACH ",
@@ -474,6 +484,16 @@
       "end_date": "",
       "status": "Do zrobienia",
       "comments": "Zakupione 4 pompy zamienne o wydajnosci 30 BAR 02.07.2024 - przyjazd grzeska wytypowanie pomp folgowski o wydajnosci 2 litrow  na minute oraz 5 litrow na minute",
+      "pictures": []
+    },
+    {
+      "id": 49,
+      "category": "Hass/Harnaś",
+      "description": "Szyby do wymiany.",
+      "start_date": "2024-01-08",
+      "end_date": "2024-01-18",
+      "status": "Zrobione",
+      "comments": "G. Jarmuł przesunął szybę - pęknięcie schowane w obramowanie. Wymiary szyby Hass St 35 430x580 gr: 10,5 (2x5 kolejona)",
       "pictures": []
     },
     {
@@ -1105,11 +1125,11 @@
     {
       "id": 111,
       "category": "Hass/Harnaś",
-      "description": "Szyby do wymiany.",
-      "start_date": "2024-01-08",
-      "end_date": "2024-01-18",
-      "status": "Zrobione",
-      "comments": "G. Jarmuł przesunął szybę - pęknięcie schowane w obramowanie. Wymiary szyby Hass St 35 430x580 gr: 10,5 (2x5 kolejona)",
+      "description": "Demak",
+      "start_date": "2024-01-16",
+      "end_date": "",
+      "status": "W trakcie",
+      "comments": "Wysłano zapytanie do Adrian . WSTRZYMANO ZAKUP",
       "pictures": []
     },
     {
@@ -1125,16 +1145,6 @@
     {
       "id": 113,
       "category": "Hass/Harnaś",
-      "description": "Demak",
-      "start_date": "2024-01-16",
-      "end_date": "",
-      "status": "W trakcie",
-      "comments": "Wysłano zapytanie do Adrian . WSTRZYMANO ZAKUP",
-      "pictures": []
-    },
-    {
-      "id": 114,
-      "category": "Hass/Harnaś",
       "description": "Spalony stycznik ",
       "start_date": "2024-03-27",
       "end_date": "2024-03-28",
@@ -1144,46 +1154,6 @@
         "Picture 11_1.jpg",
         "Picture 11_2.png"
       ]
-    },
-    {
-      "id": 115,
-      "category": "Hass/Harnaś",
-      "description": "Stycznik od wrzeciona ( przekroczony zakres powyżej 200 %)",
-      "start_date": "2024-05-12",
-      "end_date": "",
-      "status": "Zrobione",
-      "comments": "Zamowione",
-      "pictures": []
-    },
-    {
-      "id": 116,
-      "category": "Suwnica",
-      "description": "Pilot podczas opuszczania zacina się - zgłoszone do konserwatora. ",
-      "start_date": "2024-02-14",
-      "end_date": "",
-      "status": "Zrobione",
-      "comments": "Pilot pożyczono z działu zbirników do momentu naprawy OC. Pilot wyczyszczono zamówiono u Adriana Gumke na joystick.",
-      "pictures": []
-    },
-    {
-      "id": 117,
-      "category": "Suwnica",
-      "description": "Niepokojące dźwieki z podtorza suwnicy",
-      "start_date": "2024-03-25",
-      "end_date": "",
-      "status": "Do zrobienia",
-      "comments": "25.03.2024 - zgłoszono D. Kobusowi - zamówił konserwatora. Czekamy na wycenę czyszczenia podtorza - prawdopodbnie zanieczyszczone zaolejone podtorze.  24.06.2024 - WYSŁANA DO ABUSA E-MAIL 04.07.2024 V- PRZYJAZD ABUSA",
-      "pictures": []
-    },
-    {
-      "id": 118,
-      "category": "Schiees",
-      "description": "Dorobienie osłony od stołu",
-      "start_date": "2023-11-27",
-      "end_date": "2023-11-28",
-      "status": "Zrobione",
-      "comments": "",
-      "pictures": []
     }
   ]
 }
