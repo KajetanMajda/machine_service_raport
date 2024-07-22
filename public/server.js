@@ -214,7 +214,9 @@ function editReport(reportItem, report) {
   saveButton.textContent = 'Zatwierdz';
   saveButton.addEventListener('click', (e) => {
     e.preventDefault();
+    const pictures = picturesInput.files;
     saveReport(idInput.value, descriptionInput.value, startDateInput.value, endDateInput.value, statusSelect.value, commentsInput.value);
+    addAnotherPhoto(report.id, pictures);
   });
 
   const cancelButton = document.createElement('button');
@@ -257,7 +259,7 @@ function saveReport(id, description, startDate, endDate, status, comments) {
     comments: comments
   };
 
-  fetch(`/api/reports/${id}`, {
+  fetch(`/api/reports/${id}/edit`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
@@ -293,20 +295,21 @@ function deleteReport(id) {
 }
 
 function removeImage(reportId, imagePath) {
-  fetch(`/api/reports/${reportId}/image`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ path: imagePath })
+  const encodedImagePath = encodeURIComponent(imagePath);
+  console.log('Request to delete image', imagePath, 'from report', reportId);
+
+  fetch(`/api/reports/${reportId}/image/${encodedImagePath}`, {
+    method: 'DELETE'
   })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      fetchReports();
-    })
-    .catch(error => console.error('Error removing image:', error));
+  .then(response => {
+    if (!response.ok) {
+      return response.json().then(err => { throw new Error(err.error); });
+    }
+    fetchReports();
+  })
+  .catch(error => {
+    alert('Error removing image: ' + error.message);
+  });
 }
 
 function filterReports(category) {
@@ -327,6 +330,29 @@ function navUnderScore(event) {
 function toggleForm(show) {
   const formContainer = document.getElementById('add-container');
   formContainer.style.display = show ? 'block' : 'none';
+}
+
+function addAnotherPhoto(reportId, pictures) {
+  const formData = new FormData();
+  for (const picture of pictures) {
+    formData.append('pictures', picture);
+  }
+
+
+  fetch(`/api/reports/${reportId}/photo`, {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (!response.ok) {
+      return response.json().then(err => { throw new Error(err.error); });
+    }
+    return response.json();
+  })
+  .then(() => {
+    fetchReports();
+  })
+  .catch(error => console.error('Error adding photos:', error));
 }
 
 document.getElementById('report-form').addEventListener('submit', function (event) {
@@ -371,4 +397,4 @@ document.getElementById('report-form').addEventListener('submit', function (even
 });
 
 fetchReports();
-toggleForm(false);
+toggleForm(true);

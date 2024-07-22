@@ -91,8 +91,26 @@ app.post('/api/reports', upload.array('pictures', 10), (req, res) => {
   res.json({ id: newReport.id });
 });
 
+// Endpoint do dodawania zdjęcia do istniejącego raportu
+app.post('/api/reports/:id/photo', upload.array('pictures', 10), (req, res) => {
+  const data = readData();
+  const reportId = parseInt(req.params.id, 10);
+  const reportIndex = data.maintenance.findIndex(report => report.id === reportId);
+
+  if (reportIndex !== -1) {
+    const existingPictures = data.maintenance[reportIndex].pictures || [];
+    const newPictures = req.files ? req.files.map(file => file.filename) : [];
+
+    data.maintenance[reportIndex].pictures = [...existingPictures, ...newPictures];
+    writeData(data);
+    res.json({ id: reportId });
+  } else {
+    res.status(404).json({ error: 'Report not found' });
+  }
+});
+
 // Endpoint do aktualizacji istniejącego raportu
-app.put('/api/reports/:id', (req, res) => {
+app.put('/api/reports/:id/edit', (req, res) => {
   const data = readData();
   const reportId = parseInt(req.params.id, 10);
   const reportIndex = data.maintenance.findIndex(report => report.id === reportId);
@@ -130,10 +148,8 @@ app.delete('/api/reports/:id', (req, res) => {
 });
 
 // Endpoint do usuwania zdjęcia z raportu
-app.delete('/api/reports/:id/image', (req, res) => {
-  const { id } = req.params;
-  const { path } = req.body;
-
+app.delete('/api/reports/:id/image/:path', (req, res) => {
+  const { id, path } = req.params;
   const data = readData();
   const reportIndex = data.maintenance.findIndex(report => report.id === parseInt(id));
 
@@ -141,10 +157,28 @@ app.delete('/api/reports/:id/image', (req, res) => {
     return res.status(404).json({ error: 'Report not found' });
   }
 
-  data.maintenance[reportIndex].pictures = data.maintenance[reportIndex].pictures.filter(picture => picture !== path);
+  const report = data.maintenance[reportIndex];
 
+  const decodedPath = decodeURIComponent(path);
+  const imageIndex = report.pictures.indexOf(decodedPath);
+  if (imageIndex === -1) {
+    return res.status(404).json({ error: 'Image not found' });
+  }
+  
+  report.pictures.splice(imageIndex, 1);
   writeData(data);
+  
   res.status(204).end();
+});
+
+// Endpoint do pobierania raportów według kategorii i statusu
+app.get('/api/report/category/:category/status/:status', (req, res) => {
+  const data = readData();
+  const { category, status } = req.params;
+
+  const filteredReports = data.maintenance.filter(report => report.category === category && report.status === status);
+
+  res.json({ maintenance: filteredReports });
 });
 
 // Serve index.html

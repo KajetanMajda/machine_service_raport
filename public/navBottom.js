@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         status: [
             { value: 'Sort', text: 'Sortuj', disabled: true, selected: true, hidden: true },
-            { value: 'done', text: 'Zrobione' },
-            { value: 'in_progress', text: 'W trakcie' },
-            { value: 'not_done', text: 'Do zrobienia' },
+            { value: 'Zrobione', text: 'Zrobione' },
+            { value: 'W trakcie', text: 'W trakcie' },
+            { value: 'Do zrobienia', text: 'Do zrobienia' },
             { value: '', text: 'Brak statusu' }
         ],
         comments: [
@@ -49,6 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (optionData.hidden) option.hidden = true;
             orderSelect.appendChild(option);
         });
+
+        if (selectedCriteria === 'status') {
+            orderSelect.onchange = sortStatusFromSelect;
+        }
     });
 
     criteriaSelect.dispatchEvent(new Event('change'));
