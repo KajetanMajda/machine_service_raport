@@ -95,7 +95,7 @@
       "category": "SC33",
       "description": "Pozycjonowanie belki ( Jarek Makowski)",
       "start_date": "",
-      "status": "Zrobione",
+      "status": "Do zrobienia",
       "end_date": "",
       "comments": "20 ORAZ 21 TYDZIEŃ JAREK ZAJĘTY",
       "pictures": []
@@ -106,7 +106,7 @@
       "description": "Kołkowanie supportu ( po pkt. 8)",
       "start_date": "",
       "end_date": "",
-      "status": "Zrobione",
+      "status": "Do zrobienia",
       "comments": "",
       "pictures": []
     },
@@ -126,7 +126,7 @@
       "description": "Liniał do czyszczenia osi X",
       "start_date": "2024-01-11",
       "end_date": "",
-      "status": "Zrobione",
+      "status": "Do zrobienia",
       "comments": "",
       "pictures": []
     },
@@ -136,7 +136,7 @@
       "description": "Kontrola geometri i regulacja",
       "start_date": "",
       "end_date": "",
-      "status": "Zrobione",
+      "status": "Do zrobienia",
       "comments": "",
       "pictures": []
     },
@@ -266,7 +266,7 @@
       "description": "Wymiana styczników",
       "start_date": "2024-05-06",
       "end_date": "",
-      "status": "W trakcie",
+      "status": "Do zrobienia",
       "comments": "10.02.2024 - Wymiana styczników 10.02.2024 17.02.2024 - Wymiana styczników 27.02.2024 - wymiana styczników 16.06.2024 - wymiana styczników",
       "pictures": []
     },
@@ -306,7 +306,7 @@
       "description": "Złożenie zapasowej przekładni",
       "start_date": "2023-12-13",
       "end_date": "",
-      "status": "W trakcie",
+      "status": "Do zrobienia"  ,
       "comments": "",
       "pictures": []
     },
@@ -316,7 +316,7 @@
       "description": "Sprawdzenie ustawienie geometri",
       "start_date": "2023-11-27",
       "end_date": "",
-      "status": "W trakcie",
+      "status": "Do zrobienia",
       "comments": "Geometria sprawdzona - 13.03.2024 przyjazd serwisanta w celu omówienia.",
       "pictures": []
     },
@@ -336,7 +336,7 @@
       "description": "Maszyna robi owal 0,8 mm prawdopodobnie luz osi X do sprawdzenia.",
       "start_date": "2024-03-26",
       "end_date": "",
-      "status": "W trakcie",
+      "status": "Do zrobienia",
       "comments": "Grzegorz",
       "pictures": []
     },
@@ -442,7 +442,7 @@
       "description": "Pilot podczas opuszczania zacina się - zgłoszone do konserwatora. ",
       "start_date": "2024-02-14",
       "end_date": "",
-      "status": "Zrobione",
+      "status": "Do zrobienia",
       "comments": "Pilot pożyczono z działu zbirników do momentu naprawy OC. Pilot wyczyszczono zamówiono u Adriana Gumke na joystick.",
       "pictures": []
     },
@@ -452,7 +452,7 @@
       "description": "RYGLE NA WSZYSTKICH FURTKACH ",
       "start_date": "2024-05-13",
       "end_date": "",
-      "status": "W trakcie",
+      "status": "Do zrobienia",
       "comments": "OFERTA NA RYGLE - J. MAKOWSKI: oferta na kabel  e-mail",
       "pictures": []
     },
@@ -482,7 +482,7 @@
       "description": "AWARIA POMPY OD HYDROTATYKI STOŁU",
       "start_date": "2024-06-27",
       "end_date": "",
-      "status": "Do zrobienia",
+      "status": "Zrobione",
       "comments": "Zakupione 4 pompy zamienne o wydajnosci 30 BAR 02.07.2024 - przyjazd grzeska wytypowanie pomp folgowski o wydajnosci 2 litrow  na minute oraz 5 litrow na minute",
       "pictures": []
     },
@@ -790,7 +790,7 @@
       "description": "Geometria.",
       "start_date": "2024-05-06",
       "end_date": "",
-      "status": "Zrobione",
+      "status": "Do zrobienia",
       "comments": "Robert, Maciek, Valery",
       "pictures": []
     },
@@ -882,7 +882,7 @@
       "description": "Geometria.",
       "start_date": "",
       "end_date": "",
-      "status": "W trakcie",
+      "status": "Do zrobienia",
       "comments": "",
       "pictures": []
     },
@@ -914,7 +914,7 @@
       "description": "Suwak - prostopadłość do osi stołu.",
       "start_date": "2024-01-13",
       "end_date": "",
-      "status": "W trakcie",
+      "status": "Do zrobienia",
       "comments": "",
       "pictures": []
     },
@@ -944,7 +944,7 @@
       "description": "Uruchomienie drugiego Imaka",
       "start_date": "2024-01-01",
       "end_date": "",
-      "status": "W trakcie",
+      "status": "Do zrobienia",
       "comments": "",
       "pictures": []
     },
@@ -1128,7 +1128,7 @@
       "description": "Demak",
       "start_date": "2024-01-16",
       "end_date": "",
-      "status": "W trakcie",
+      "status": "Do zrobienia",
       "comments": "Wysłano zapytanie do Adrian . WSTRZYMANO ZAKUP",
       "pictures": []
     },
@@ -1154,6 +1154,16 @@
         "Picture 11_1.jpg",
         "Picture 11_2.png"
       ]
+    },
+    {
+      "id": 114,
+      "category": "Suwnica",
+      "description": "Niepokojące dźwieki z podtorza suwnicy",
+      "start_date": "2024-03-25",
+      "end_date": "",
+      "status": "Do zrobienia",
+      "comments": "",
+      "pictures": []
     }
   ]
 }
