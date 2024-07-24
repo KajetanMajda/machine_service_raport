@@ -77,6 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeCategory = getActiveCategory();
         fetchReports(activeCategory, null, null, query);
     });
+
+    yearSelect.addEventListener('change', () => {
+        const year = yearSelect.value;
+        const activeCategory = getActiveCategory();
+        fetchReports(activeCategory, null, null, null, year);
+    });
+    
     fetchReports('SC33');
 });
 
