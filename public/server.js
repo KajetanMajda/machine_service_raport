@@ -5,9 +5,28 @@ function checkYear(){
   return yearSelect.value === "" ? null : currentYear;
 }
 
-function fetchReports(category = 'SC33', query = null, year = checkYear()) {
-  console.log(`Category: ${category}, Query: ${query}, Year: ${year}`);
-  let url = `/api/report/category/${encodeURIComponent(category)}/year/${encodeURIComponent(year)}`;
+function checkStatus(){
+  const orderSelect = document.getElementById('order-select');
+
+  if (orderSelect.value === ""){
+    console.log("Null")
+    return "";
+  }else if(orderSelect.value == "Zrobione"){
+    console.log("Z")
+    return "Zrobione";
+  }else if(orderSelect.value == "Do zrobienia"){
+    console.log("D")
+    return "Do zrobienia";
+  }else if(orderSelect.value == "W trakcie"){
+    console.log("W")
+    return "W trakcie";
+  }
+    
+}
+
+function fetchReports(category = 'SC33', query = null, year = checkYear(), status = checkStatus()) {
+  console.log(`Category: ${category}, Query: ${query}, Year: ${year}, Status: ${status}`);
+  let url = `/api/report/category/${encodeURIComponent(category)}/year/${encodeURIComponent(year)}/status/${encodeURIComponent(status)}`;
 
   fetch(url)
     .then(response => response.json())

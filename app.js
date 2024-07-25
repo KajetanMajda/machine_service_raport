@@ -34,18 +34,6 @@ const readData = () => {
 
 const writeData = (data) => fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
 
-// Endpoint do pobierania wszystkich raportów lub filtracji po kategorii
-app.get('/api/report/category/:category', (req, res) => {
-  const data = readData();
-  const { category } = req.params;
-
-  const filteredReports = data.maintenance.filter(report => {
-    return report.category === category;
-  });
-
-  res.json({ maintenance: filteredReports });
-});
-
 // Endpoint do dodawania nowego raportu
 app.post('/api/reports', upload.array('pictures', 10), (req, res) => {
   const { description, start_date, end_date, status, comments } = req.body;
@@ -146,19 +134,9 @@ app.delete('/api/reports/:id/image/:path', (req, res) => {
   res.status(204).end();
 });
 
-// Endpoint do pobierania raportów według kategorii i statusu
-app.get('/api/report/category/:category/status/:status', (req, res) => {
+app.get('/api/report/category/:category/year/:year?/status/:status?', (req, res) => {
   const data = readData();
-  const { category, status } = req.params;
-
-  const filteredReports = data.maintenance.filter(report => report.category === category && report.status === status);
-
-  res.json({ maintenance: filteredReports });
-});
-
-app.get('/api/report/category/:category/year/:year?', (req, res) => {
-  const data = readData();
-  const { category, year } = req.params;
+  const { category, year, status } = req.params;
 
   let filteredReports;
 
@@ -175,9 +153,12 @@ app.get('/api/report/category/:category/year/:year?', (req, res) => {
     filteredReports = data.maintenance.filter(report => report.category === category);
   }
 
+  if (status && status !== 'null') {
+    filteredReports = filteredReports.filter(report => report.status === status);
+  }
+
   res.json({ maintenance: filteredReports });
 });
-
 
 // Serve index.html
 app.get('/', (req, res) => {
