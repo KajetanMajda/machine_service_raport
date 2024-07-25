@@ -1,11 +1,18 @@
-function fetchReports(category = 'SC33', criteria = null, order = null, query = null) {
+function fetchReports(category = 'SC33', criteria = null, order = null, query = null, year = null) {
   let url = `/api/report/category/${encodeURIComponent(category)}`;
-  
+
+  const params = new URLSearchParams();
   if (criteria && order) {
-    url += `?sort=${criteria}&order=${order}`;
+    params.append('sort', criteria);
+    params.append('order', order);
   }
   if (query) {
-    url += `${criteria ? '&' : '?'}query=${encodeURIComponent(query)}`;
+    params.append('query', query);
+  }
+  if (year) {
+    url = `/api/report/category/${encodeURIComponent(category)}/year/${year}`;
+  } else if (params.toString()) {
+    url += `?${params.toString()}`;
   }
 
   fetch(url)
@@ -116,6 +123,7 @@ function fetchReports(category = 'SC33', criteria = null, order = null, query = 
     })
     .catch(error => console.error('Error fetching data:', error));
 }
+
 
 function setStatusClass(element, status) {
   if (status === 'Zrobione') {

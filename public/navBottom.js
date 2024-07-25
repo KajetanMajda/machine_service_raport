@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchButton = document.querySelector('.searchButton');
     const resetButton = document.querySelector('.resetButton');
     const searchInput = document.querySelector('.searchInput');
+    const yearSelect = document.querySelector('#year-select');
 
     const optionsMap = {
         description: [
@@ -68,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         criteriaSelect.value = '';
         orderSelect.innerHTML = '<option value=""></option>';
         searchInput.value = '';
+        yearSelect.value = '';
         const activeCategory = getActiveCategory();
         fetchReports(activeCategory);
     });
@@ -83,8 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeCategory = getActiveCategory();
         fetchReports(activeCategory, null, null, null, year);
     });
-    
-    fetchReports('SC33');
+
+    const currentYear = new Date().getFullYear();
+    yearSelect.value = currentYear;
+    fetchReports('SC33', null, null, null, currentYear);
 });
 
 function getActiveCategory() {

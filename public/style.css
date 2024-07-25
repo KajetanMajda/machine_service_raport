@@ -211,14 +211,15 @@ body {
   width: 30%;
 }
 .startDate{
-  width: 17%;
+  width: 18%;
+  align-items: center;
 }
 .endDate{
   align-items: center;
   width: 15%;
 }
 #comments{
-  width: 30%;
+  width: 23%;
 }
 #pictures{
   width: 25%;
