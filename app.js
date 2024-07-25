@@ -134,23 +134,22 @@ app.delete('/api/reports/:id/image/:path', (req, res) => {
   res.status(204).end();
 });
 
+// Endpoint do wyswitlania wraz z filtrami
 app.get('/api/report/category/:category/year/:year?/status/:status?', (req, res) => {
   const data = readData();
   const { category, year, status } = req.params;
 
-  let filteredReports;
+  let filteredReports = data.maintenance.filter(report => report.category === category);
 
   if (year && year !== 'null') {
-    filteredReports = data.maintenance.filter(report => {
+    filteredReports = filteredReports.filter(report => {
       const startDate = new Date(report.start_date);
       const endDate = new Date(report.end_date);
       const reportYearStart = startDate.getFullYear();
       const reportYearEnd = endDate.getFullYear();
 
-      return report.category === category && (reportYearStart == year || reportYearEnd == year);
+      return reportYearStart == year || reportYearEnd == year;
     });
-  } else {
-    filteredReports = data.maintenance.filter(report => report.category === category);
   }
 
   if (status && status !== 'null') {

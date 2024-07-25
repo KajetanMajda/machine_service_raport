@@ -5,12 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.querySelector('.searchInput');
     const yearSelect = document.querySelector('#year-select');
 
-    // searchButton.addEventListener('click', () => {
-    //     const activeCategory = getActiveCategory();
-    //     const year = yearSelect.value;
-    //     fetchReports(activeCategory, null, year);
-    // });
-
     resetButton.addEventListener('click', () => {
         orderSelect.value = '';
         searchInput.value = '';
@@ -21,25 +15,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase();
+        const year = yearSelect.value || null;
         const activeCategory = getActiveCategory();
-        const year = yearSelect.value;
-        const select = orderSelect.value
-        fetchReports(activeCategory, query, year);
+        const status = orderSelect.value || null;
+        fetchReports(activeCategory, query, year, status);
     });
     
+
     yearSelect.addEventListener('change', () => {
         const year = yearSelect.value;
         const activeCategory = getActiveCategory();
-        fetchReports(activeCategory, null, year);
+        const status = orderSelect.value;
+        fetchReports(activeCategory, null, year, status);
     });
 
     orderSelect.addEventListener('change', () => {
         const year = yearSelect.value;
         const activeCategory = getActiveCategory();
-        fetchReports(activeCategory, null, year);
+        const status = orderSelect.value;
+        fetchReports(activeCategory, null, year, status);
     });
 
-    // Fetch reports initially for the current year
     const currentYear = new Date().getFullYear();
     yearSelect.value = currentYear;
     fetchReports('SC33', null, currentYear, null);
@@ -47,5 +43,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function getActiveCategory() {
     const activeElement = document.querySelector('.navbarItem.active');
-    return activeElement ? activeElement.textContent : null;
+    return activeElement ? activeElement.textContent.trim() : null;
 }
