@@ -33,19 +33,17 @@
                     <option value="2027">2027</option>
                 </select>
                 <select name="criteria" id="criteria-select">
-                    <option value="" disabled selected>Wybierz kategorię</option>
-                    <option value="description">Opis problemu</option>
-                    <option value="start_date">Data wystąpienia</option>
-                    <option value="end_date">Data naprawy</option>
-                    <option value="status">Status</option>
-                    <option value="comments">Uwagi</option>
+                    <option value="status" selected>Status</option>
                 </select>
                 <select name="order" id="order-select">
-                    <option value=""></option>
+                    <option value=""disabled selected>Wybierz Status</option>
+                    <option value="Zrobione">Zrobione</option>
+                    <option value="W trakcie">W trakcie</option>
+                    <option value="Do zrobienia">Do zrobienia</option>
                 </select>
                 <input class="searchInput" type="text" placeholder="Wyszukaj">
                 <button class="resetButton">Resetuj</button>
-                <button class="searchButton"><i class="fa-solid fa-magnifying-glass"></i>Wyszukaj</button>
+                <!-- <button class="searchButton"><i class="fa-solid fa-magnifying-glass"></i>Wyszukaj</button> -->
             </div>
         </nav>
         
@@ -103,11 +101,8 @@
 
     <script src="server.js"></script>
     <script src="nav.js"></script>
-    <script src="sort.js"></script>
-    <script src="year.js"></script>
     <script src="navBottom.js"></script>
     <script src="footer.js"></script>
-    <script src="date.js"></script>
 </body>
 
 </html>

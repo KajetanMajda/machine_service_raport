@@ -1,14 +1,17 @@
 function checkYear(){
   const yearSelect = document.querySelector('#year-select')
-  const currentYear = new Date().getFullYear();
-  
-  return yearSelect.value === "" ? null : currentYear;
+  return yearSelect.value || null;
 }
 
-function fetchReports(category = 'SC33', query = null, year = checkYear()) {
-  console.log(`Category: ${category}, Query: ${query}, Year: ${year}`);
-  let url = `/api/report/category/${encodeURIComponent(category)}/year/${encodeURIComponent(year)}`;
+function checkStatus(){
+  const orderSelect = document.getElementById('order-select');
+  return orderSelect.value || null;
+}
 
+function fetchReports(category = 'SC33', query = null, year = checkYear(), status = checkStatus()) {
+  console.log(`Category: ${category}, Query: ${query}, Year: ${year}, Status: ${status}`);
+  let url = `/api/report/category/${encodeURIComponent(category)}/year/${encodeURIComponent(year)}/status/${encodeURIComponent(status)}`;
+  
   fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -16,7 +19,6 @@ function fetchReports(category = 'SC33', query = null, year = checkYear()) {
       reportListContainer.innerHTML = '';
 
       data.maintenance.forEach(report => {
-        //Potrzebne do wyszukaj poprzez INPUT
         if (query) {
           const lowerQuery = query.toLowerCase();
           if (
