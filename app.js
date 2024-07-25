@@ -35,40 +35,15 @@ const readData = () => {
 const writeData = (data) => fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
 
 // Endpoint do pobierania wszystkich raportów lub filtracji po kategorii
-app.get('/api/reports', (req, res) => {
+app.get('/api/report/category/:category', (req, res) => {
   const data = readData();
-  let reports = data.maintenance;
+  const { category } = req.params;
 
-  const { category, sort, order, query } = req.query;
+  const filteredReports = data.maintenance.filter(report => {
+    return report.category === category;
+  });
 
-  if (category) {
-    reports = reports.filter(report => report.category === category);
-  }
-
-  if (query) {
-    const lowerQuery = query.toLowerCase();
-    reports = reports.filter(report => {
-      return (
-        report.description.toLowerCase().includes(lowerQuery) ||
-        report.start_date.toLowerCase().includes(lowerQuery) ||
-        report.end_date.toLowerCase().includes(lowerQuery) ||
-        report.status.toLowerCase().includes(lowerQuery) ||
-        report.comments.toLowerCase().includes(lowerQuery)
-      );
-    });
-  }
-
-  if (sort && order) {
-    reports.sort((a, b) => {
-      const fieldA = a[sort] ? a[sort].toLowerCase() : '';
-      const fieldB = b[sort] ? b[sort].toLowerCase() : '';
-      if (fieldA < fieldB) return order === 'asc' ? -1 : 1;
-      if (fieldA > fieldB) return order === 'asc' ? 1 : -1;
-      return 0;
-    });
-  }
-
-  res.json({ maintenance: reports });
+  res.json({ maintenance: filteredReports });
 });
 
 // Endpoint do dodawania nowego raportu
@@ -196,7 +171,6 @@ app.get('/api/report/category/:category/year/:year', (req, res) => {
 
   res.json({ maintenance: filteredReports });
 });
-
 
 // Serve index.html
 app.get('/', (req, res) => {

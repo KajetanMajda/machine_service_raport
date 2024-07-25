@@ -1,14 +1,13 @@
-function fetchReports(category = null, criteria = null, order = null, query = null) {
-  let url = '/api/reports';
-  if (category) {
-    url += `?category=${encodeURIComponent(category)}`;
-  }
+function fetchReports(category = 'SC33', criteria = null, order = null, query = null) {
+  let url = `/api/report/category/${encodeURIComponent(category)}`;
+  
   if (criteria && order) {
-    url += `${category ? '&' : '?'}sort=${criteria}&order=${order}`;
+    url += `?sort=${criteria}&order=${order}`;
   }
   if (query) {
-    url += `${category || criteria ? '&' : '?'}query=${encodeURIComponent(query)}`;
+    url += `${criteria ? '&' : '?'}query=${encodeURIComponent(query)}`;
   }
+
   fetch(url)
     .then(response => response.json())
     .then(data => {
