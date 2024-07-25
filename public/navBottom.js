@@ -4,13 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchButton = document.querySelector('.searchButton');
     const resetButton = document.querySelector('.resetButton');
     const searchInput = document.querySelector('.searchInput');
+    const yearSelect = document.querySelector('#year-select');
 
     const optionsMap = {
-        description: [
-            { value: 'Sort', text: 'Sortuj', disabled: true, selected: true, hidden: true },
-            { value: 'az', text: 'A-Z' },
-            { value: 'za', text: 'Z-A' }
-        ],
         start_date: [
             { value: 'Sort', text: 'Sortuj', disabled: true, selected: true, hidden: true },
             { value: 'asc', text: 'Najwcześniejsza do najnowszej' },
@@ -27,11 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
             { value: 'W trakcie', text: 'W trakcie' },
             { value: 'Do zrobienia', text: 'Do zrobienia' },
             { value: '', text: 'Brak statusu' }
-        ],
-        comments: [
-            { value: 'Sort', text: 'Sortuj', disabled: true, selected: true, hidden: true },
-            { value: 'az', text: 'A-Z' },
-            { value: 'za', text: 'Z-A' }
         ]
     };
 
@@ -58,36 +49,40 @@ document.addEventListener('DOMContentLoaded', () => {
     criteriaSelect.dispatchEvent(new Event('change'));
 
     searchButton.addEventListener('click', () => {
-        const criteria = criteriaSelect.value;
-        const order = orderSelect.value;
         const activeCategory = getActiveCategory();
-        fetchReports(activeCategory, criteria, order);
+        const year = yearSelect.value;
+        fetchReports(activeCategory, null, year);
     });
 
     resetButton.addEventListener('click', () => {
         criteriaSelect.value = '';
         orderSelect.innerHTML = '<option value=""></option>';
         searchInput.value = '';
+        yearSelect.value = '';
         const activeCategory = getActiveCategory();
-        fetchReports(activeCategory);
+        fetchReports(activeCategory, null, null);
     });
 
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase();
         const activeCategory = getActiveCategory();
-        fetchReports(activeCategory, null, null, query);
+        const year = yearSelect.value;
+        fetchReports(activeCategory, query, year);
     });
 
     yearSelect.addEventListener('change', () => {
         const year = yearSelect.value;
         const activeCategory = getActiveCategory();
-        fetchReports(activeCategory, null, null, null, year);
+        fetchReports(activeCategory, null, year);
     });
-    
-    fetchReports('SC33');
+
+    // Fetch reports initially for the current year
+    const currentYear = new Date().getFullYear();
+    yearSelect.value = currentYear;
+    fetchReports('SC33', null, currentYear);
 });
 
 function getActiveCategory() {
-  const activeElement = document.querySelector('.navbarItem.active');
-  return activeElement ? activeElement.textContent : null;
+    const activeElement = document.querySelector('.navbarItem.active');
+    return activeElement ? activeElement.textContent : null;
 }

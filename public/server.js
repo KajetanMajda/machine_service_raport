@@ -1,14 +1,14 @@
-function fetchReports(category = null, criteria = null, order = null, query = null) {
-  let url = '/api/reports';
-  if (category) {
-    url += `?category=${encodeURIComponent(category)}`;
-  }
-  if (criteria && order) {
-    url += `${category ? '&' : '?'}sort=${criteria}&order=${order}`;
-  }
-  if (query) {
-    url += `${category || criteria ? '&' : '?'}query=${encodeURIComponent(query)}`;
-  }
+function checkYear(){
+  const yearSelect = document.querySelector('#year-select')
+  const currentYear = new Date().getFullYear();
+  
+  return yearSelect.value === "" ? null : currentYear;
+}
+
+function fetchReports(category = 'SC33', query = null, year = checkYear()) {
+  console.log(`Category: ${category}, Query: ${query}, Year: ${year}`);
+  let url = `/api/report/category/${encodeURIComponent(category)}/year/${encodeURIComponent(year)}`;
+
   fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -16,6 +16,7 @@ function fetchReports(category = null, criteria = null, order = null, query = nu
       reportListContainer.innerHTML = '';
 
       data.maintenance.forEach(report => {
+        //Potrzebne do wyszukaj poprzez INPUT
         if (query) {
           const lowerQuery = query.toLowerCase();
           if (
@@ -223,7 +224,7 @@ function editReport(reportItem, report) {
   cancelButton.className = 'backButton';
   cancelButton.textContent = 'Cofnij';
   cancelButton.addEventListener('click', () => {
-    fetchReports();
+    fetchReportsWithIf();
   });
 
   const deleteButton = document.createElement('button');
@@ -247,6 +248,12 @@ function editReport(reportItem, report) {
   reportItem.appendChild(commentsInput);
   reportItem.appendChild(picturesInput);
   reportItem.appendChild(buttonEditContainer);
+}
+
+function fetchReportsWithIf(){
+  const yearSelect = document.querySelector('#year-select');
+  const activeCategory = getActiveCategory();
+  yearSelect.value === "" ? fetchReports(activeCategory,null,null):fetchReports(activeCategory,null, yearSelect.value);
 }
 
 function saveReport(id, description, startDate, endDate, status, comments) {
@@ -273,7 +280,7 @@ function saveReport(id, description, startDate, endDate, status, comments) {
       return response.json();
     })
     .then(() => {
-      fetchReports();
+      fetchReportsWithIf()
     })
     .catch(error => console.error('Error saving data:', error));
 }
@@ -289,7 +296,7 @@ function deleteReport(id) {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      fetchReports();
+      fetchReportsWithIf();
     })
     .catch(error => console.error('Error deleting data:', error));
 }
@@ -301,15 +308,15 @@ function removeImage(reportId, imagePath) {
   fetch(`/api/reports/${reportId}/image/${encodedImagePath}`, {
     method: 'DELETE'
   })
-  .then(response => {
-    if (!response.ok) {
-      return response.json().then(err => { throw new Error(err.error); });
-    }
-    fetchReports();
-  })
-  .catch(error => {
-    alert('Error removing image: ' + error.message);
-  });
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then(err => { throw new Error(err.error); });
+      }
+      fetchReportsWithIf();
+    })
+    .catch(error => {
+      alert('Error removing image: ' + error.message);
+    });
 }
 
 function filterReports(category) {
@@ -343,16 +350,16 @@ function addAnotherPhoto(reportId, pictures) {
     method: 'POST',
     body: formData
   })
-  .then(response => {
-    if (!response.ok) {
-      return response.json().then(err => { throw new Error(err.error); });
-    }
-    return response.json();
-  })
-  .then(() => {
-    fetchReports();
-  })
-  .catch(error => console.error('Error adding photos:', error));
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then(err => { throw new Error(err.error); });
+      }
+      return response.json();
+    })
+    .then(() => {
+      fetchReportsWithIf();
+    })
+    .catch(error => console.error('Error adding photos:', error));
 }
 
 document.getElementById('report-form').addEventListener('submit', function (event) {
@@ -391,7 +398,7 @@ document.getElementById('report-form').addEventListener('submit', function (even
     .then(response => response.json())
     .then(() => {
       this.reset();
-      fetchReports();
+      fetchReportsWithIf();
     })
     .catch(error => console.error('Error:', error));
 });
