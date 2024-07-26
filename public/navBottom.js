@@ -17,22 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const query = searchInput.value.toLowerCase();
         const year = yearSelect.value || null;
         const activeCategory = getActiveCategory();
-        const status = orderSelect.value || null;
+        const status = orderSelect.value || null ;
         fetchReports(activeCategory, query, year, status);
     });
     
 
     yearSelect.addEventListener('change', () => {
-        const year = yearSelect.value;
+        const year = yearSelect.value || null ;
         const activeCategory = getActiveCategory();
-        const status = orderSelect.value;
+        const status = orderSelect.value || null ;
         fetchReports(activeCategory, null, year, status);
     });
 
     orderSelect.addEventListener('change', () => {
-        const year = yearSelect.value;
+        const year = yearSelect.value || null ;
         const activeCategory = getActiveCategory();
-        const status = orderSelect.value;
+        const status = orderSelect.value || null ;
         fetchReports(activeCategory, null, year, status);
     });
 
