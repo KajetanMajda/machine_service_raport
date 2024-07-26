@@ -398,11 +398,11 @@
     },
     {
       "id": 40,
-      "category": "Schiees",
-      "description": "",
-      "start_date": "",
+      "category": "Suwnica",
+      "description": "Niepokojące dźwieki z podtorza suwnicy",
+      "start_date": "2024-03-25",
       "end_date": "",
-      "status": "Zrobione",
+      "status": "Do zrobienia",
       "comments": "",
       "pictures": []
     },
@@ -1154,16 +1154,6 @@
         "Picture 11_1.jpg",
         "Picture 11_2.png"
       ]
-    },
-    {
-      "id": 114,
-      "category": "Suwnica",
-      "description": "Niepokojące dźwieki z podtorza suwnicy",
-      "start_date": "2024-03-25",
-      "end_date": "",
-      "status": "Do zrobienia",
-      "comments": "",
-      "pictures": []
     }
   ]
 }
