@@ -289,3 +289,34 @@ body {
   color: red;
   font-weight: bold;
 }
+
+input, select{
+  height: 22px;
+  border: 1px solid var(--BG-main-colour);
+  color:#333;
+  border-radius: 10px;
+  background-color: white;
+  text-align: center; 
+}
+
+textarea {
+  height: 30px;
+  border: 1px solid var(--BG-main-colour);
+  color:#333;
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+}
+
+::placeholder {
+  justify-content: center;
+  text-align: center; 
+}
+.img, #pictures {
+  border: none;
+}
+
+.endDate, .startDate {
+  text-align: center;
+  display: block; 
+}
