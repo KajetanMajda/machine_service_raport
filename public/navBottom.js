@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const orderSelect = document.getElementById('order-select');
-    const searchButton = document.querySelector('.searchButton');
     const resetButton = document.querySelector('.resetButton');
     const searchInput = document.querySelector('.searchInput');
     const yearSelect = document.querySelector('#year-select');

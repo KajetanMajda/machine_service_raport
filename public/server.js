@@ -38,6 +38,7 @@ function fetchReports(category = 'SC33', query = null, year = checkYear(), statu
         const reportDescription = document.createElement('p');
         reportDescription.className = 'report-description';
         reportDescription.textContent = report.description;
+        reportDescription.style.textTransform = 'lowercase';
 
         const reportStartDate = document.createElement('p');
         reportStartDate.className = 'report-date-start';
@@ -50,6 +51,7 @@ function fetchReports(category = 'SC33', query = null, year = checkYear(), statu
         const reportComments = document.createElement('p');
         reportComments.className = 'report-comments';
         reportComments.textContent = report.comments;
+        reportComments.style.textTransform = 'lowercase';
 
         const reportStatus = document.createElement('p');
         reportStatus.className = 'report-status';
@@ -144,7 +146,7 @@ function editReport(reportItem, report) {
   descriptionInput.name = 'description';
   descriptionInput.placeholder = 'Opis problemu';
   descriptionInput.value = report.description;
-
+  descriptionInput.style.textTransform = 'lowercase';
   const startDateLabel = document.createElement('label');
   startDateLabel.htmlFor = 'start_date';
   startDateLabel.className = 'startDate';
@@ -201,6 +203,7 @@ function editReport(reportItem, report) {
   commentsInput.name = 'comments';
   commentsInput.placeholder = 'Uwagi';
   commentsInput.value = report.comments;
+  commentsInput.style.textTransform = 'lowercase';
 
   const picturesInput = document.createElement('input');
   picturesInput.id = 'pictures';
