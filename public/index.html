@@ -75,7 +75,7 @@
                     <label for="start_date" class="startDate">Data wystąpienia</label>
                     <input type="date" id="start_date" class="startDate" name="start_date" required>
                     <label for="end_date" class="endDate">Data naprawy</label>
-                    <input type="date" id="end_date" name="end_date" class="endDate" placeholder="Data naprawy">
+                    <input type="date" id="end_date" name="end_date" class="endDate">
                     <select name = "status" class="selection-status" required>
                         <option value="" disabled selected>Status</option>
                         <option value="Zrobione">Zrobione</option>
@@ -84,7 +84,7 @@
                         <option value=""> Brak statusu</option>
                     </select>
                     <textarea type="text" id="comments" name="comments" placeholder="Uwagi"></textarea>
-                    <input type="file" id="pictures" name="pictures" placeholder="Załącz zdjęcia" multiple>
+                    <input class = "img" type="file" id="pictures" name="pictures" placeholder="Załącz zdjęcia" multiple>
                     <button type="submit" class="addButton">Dodaj</button>
                     <input type="hidden" id="category" name="category">
                 </form>
